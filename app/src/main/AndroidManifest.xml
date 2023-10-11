@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Giwi"
         tools:targetApi="31">
         <activity
+            android:name=".Show"
+            android:exported="false" />
+        <activity
             android:name=".SignIn"
             android:exported="false" />
         <activity
