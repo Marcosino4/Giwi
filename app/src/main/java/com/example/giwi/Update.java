@@ -14,28 +14,23 @@ import android.widget.Toast;
 
 import com.example.giwi.Database.DatabaseAux;
 
-public class Show extends AppCompatActivity {
+public class Update extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show);
+        setContentView(R.layout.activity_update);
 
         showElements();
     }
-    public void changeToLogin(View view){
-        Intent nIntent = new Intent(Show.this, Login.class);
-        startActivity(nIntent);
-    }
-    public void changeToUpdate(View view){
-        Intent nIntent = new Intent(Show.this, Update.class);
-        startActivity(nIntent);
-    }
     public void refresh(View view){
-        Intent nIntent = new Intent(Show.this, Show.class);
+        Intent nIntent = new Intent(Update.this, Update.class);
         startActivity(nIntent);
     }
-
+    public void changeToLogin(View view){
+        Intent nIntent = new Intent(Update.this, Login.class);
+        startActivity(nIntent);
+    }
     void showElements(){
         SQLiteDatabase db = new DatabaseAux(this).getReadableDatabase();
 
@@ -49,36 +44,43 @@ public class Show extends AppCompatActivity {
                 String pass = cursor.getString(2);
 
                 TextView data = new TextView(this);
-                data.setText(id+"Nombre: "+name+" Password: "+ pass);
+                data.setText("Nombre: "+name+" Password: "+ pass);
                 layout.addView(data);
             }while(cursor.moveToNext());
         }
         db.close();
     }
-    public void deleteValues(View v){
-        TextView nameTextView = findViewById(R.id.nameShow);
-        TextView emailTextView = findViewById(R.id.emailShow);
+    public void updateValues(View v){
+        TextView nameTextView = findViewById(R.id.nameUpdate);
+        TextView emailTextView = findViewById(R.id.emailUpdate);
+        TextView newNameTextView = findViewById(R.id.nameUpdateNew);
+        TextView newEmailTextView = findViewById(R.id.emailUpdateNew);
 
         String nameString = nameTextView.getText().toString();
         String emailString = emailTextView.getText().toString();
+        String newNameString = newNameTextView.getText().toString();
+        String newEmailString = newEmailTextView.getText().toString();
 
-        SQLiteDatabase db = new DatabaseAux(Show.this).getWritableDatabase();
+        SQLiteDatabase db = new DatabaseAux(Update.this).getWritableDatabase();
 
         if(db != null && !nameString.isEmpty() && !emailString.isEmpty()) {
+            ContentValues values = new ContentValues();
 
-            long res = db.delete("users", "name= '"+nameString+"' and email='"+emailString+"'", null);
+            values.put("name", newNameString);
+            values.put("email", newEmailString);
 
-            if (res > 0){
-                Toast.makeText(this, "Borrado correctamente", Toast.LENGTH_LONG).show();
+            long res = db.update("users", values,"name = '"+nameString+"' and email= '"+emailString+"'", null);
+
+            if (res >= 0){
+                Toast.makeText(this, "Actualizado correctamente", Toast.LENGTH_LONG).show();
                 nameTextView.setText("");
                 emailTextView.setText("");
             }else{
-                Toast.makeText(this, "Fallo al borrar", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Fallo al actualizar", Toast.LENGTH_LONG).show();
             }
             db.close();
         }else{
             Toast.makeText(this, "Error al acceder a la base de datos", Toast.LENGTH_LONG).show();
         }
     }
-
 }
