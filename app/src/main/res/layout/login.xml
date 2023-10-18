@@ -118,7 +118,7 @@
         app:layout_constraintGuide_percent="0.58" />
 
     <EditText
-        android:id="@+id/Username"
+        android:id="@+id/UsernameLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -138,12 +138,12 @@
         app:layout_constraintGuide_percent="0.55" />
 
     <EditText
-        android:id="@+id/Password"
+        android:id="@+id/EmailLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textVisiblePassword"
-        android:text="Password"
+        android:text="Email"
         android:textColor="#565656"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
@@ -167,6 +167,7 @@
         android:layout_height="wrap_content"
         android:width="500px"
         android:backgroundTint="#404040"
+        android:onClick="insertValues"
         android:text="Log in"
         android:textColorLink="#03D838"
         app:cornerRadius="86px"
@@ -184,7 +185,7 @@
         android:backgroundTintMode="add"
         android:contextClickable="true"
         android:freezesText="false"
-        android:onClick="changeToSignin"
+        android:onClick="changeToShow"
         android:outlineProvider="none"
         android:singleLine="false"
         android:text="Don't have an account? Create one"

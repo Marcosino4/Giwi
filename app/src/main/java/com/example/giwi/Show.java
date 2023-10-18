@@ -4,11 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.giwi.Database.DatabaseAux;
 
@@ -18,6 +19,8 @@ public class Show extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show);
+
+        showElements();
     }
     public void changeToLogin(View view){
         Intent nIntent = new Intent(Show.this, Login.class);
@@ -28,8 +31,7 @@ public class Show extends AppCompatActivity {
         SQLiteDatabase db = new DatabaseAux(this).getReadableDatabase();
 
         Cursor cursor = db.rawQuery("SELECT * FROM users", null);
-        TextView nameTextView = findViewById(R.id.Username);
-        TextView passTextView = findViewById(R.id.Password);
+        LinearLayout layout = findViewById(R.id.layoutNombres);
 
         if(cursor.moveToFirst()){
             do{
@@ -37,10 +39,36 @@ public class Show extends AppCompatActivity {
                 String name = cursor.getString(1);
                 String pass = cursor.getString(2);
 
-                nameTextView.setText(id + " " + name);
-                passTextView.setText(pass);
+                TextView data = new TextView(this);
+                data.setText("Nombre: "+name+" Password: "+ pass);
+                layout.addView(data);
             }while(cursor.moveToNext());
         }
         db.close();
+    }
+    public void deleteValues(View v){
+        TextView nameTextView = findViewById(R.id.nameShow);
+        TextView emailTextView = findViewById(R.id.emailShow);
+
+        String nameString = nameTextView.getText().toString();
+        String emailString = emailTextView.getText().toString();
+
+        SQLiteDatabase db = new DatabaseAux(Show.this).getWritableDatabase();
+
+        if(db != null && !nameString.isEmpty() && !emailString.isEmpty()) {
+
+            long res = db.delete("users", "name= '"+nameString+"' and email='"+emailString+"'", null);
+
+            if (res > 0){
+                Toast.makeText(this, "Borrado correctamente", Toast.LENGTH_LONG).show();
+                nameTextView.setText("");
+                emailTextView.setText("");
+            }else{
+                Toast.makeText(this, "Fallo al borrar", Toast.LENGTH_LONG).show();
+            }
+            db.close();
+        }else{
+            Toast.makeText(this, "Error al acceder a la base de datos", Toast.LENGTH_LONG).show();
+        }
     }
 }

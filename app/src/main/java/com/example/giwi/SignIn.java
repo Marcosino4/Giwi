@@ -18,4 +18,8 @@ public class SignIn extends AppCompatActivity {
         Intent nIntent = new Intent(SignIn.this, Login.class);
         startActivity(nIntent);
     }
+    public void changeToShow(View view){
+        Intent nIntent = new Intent(SignIn.this, Show.class);
+        startActivity(nIntent);
+    }
 }
