@@ -118,11 +118,11 @@
         app:layout_constraintGuide_percent="0.58" />
 
     <EditText
-        android:id="@+id/UsernameLogin"
+        android:id="@+id/emailLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Username"
+        android:hint="Email"
         android:inputType="text"
         android:textColor="#565656"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
@@ -138,12 +138,12 @@
         app:layout_constraintGuide_percent="0.55" />
 
     <EditText
-        android:id="@+id/EmailLogin"
+        android:id="@+id/passLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Email"
-        android:inputType="textVisiblePassword"
+        android:hint="Password"
+        android:inputType="textPassword"
         android:textColor="#565656"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
@@ -152,14 +152,16 @@
 
     <CheckBox
         android:id="@+id/RememberMe"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Remember me"
         android:textColor="#565656"
         app:layout_constraintBottom_toTopOf="@+id/guideline14"
         app:layout_constraintEnd_toStartOf="@+id/guideline13"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline15"
-        app:layout_constraintTop_toTopOf="@+id/guideline11" />
+        app:layout_constraintTop_toTopOf="@+id/guideline11"
+        app:layout_constraintVertical_bias="0.727" />
 
     <Button
         android:id="@+id/LogIn"
@@ -167,7 +169,7 @@
         android:layout_height="wrap_content"
         android:width="500px"
         android:backgroundTint="#404040"
-        android:onClick="insertValues"
+        android:onClick="changeToProfile"
         android:text="Log in"
         android:textColorLink="#03D838"
         app:cornerRadius="86px"
@@ -185,7 +187,7 @@
         android:backgroundTintMode="add"
         android:contextClickable="true"
         android:freezesText="false"
-        android:onClick="changeToShow"
+        android:onClick="changeToSignin"
         android:outlineProvider="none"
         android:singleLine="false"
         android:text="Don't have an account? Create one"

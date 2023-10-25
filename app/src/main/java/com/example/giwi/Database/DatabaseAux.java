@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.Nullable;
 
 public class DatabaseAux extends SQLiteOpenHelper {
-    private static final String DB_NAME = "Fountain&Go";
+    private static final String DB_NAME = "GiwiDB";
     private static final int DB_VERSION = 1;
     public DatabaseAux(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -18,10 +18,7 @@ public class DatabaseAux extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE users " +
-                "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "name VARCHAR(25) NOT NULL," +
-                "email VARCHAR(25) NOT NULL)");
+        db.execSQL("CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(25) NOT NULL, lastName VARCHAR(25) NOT NULL, email VARCHAR(25) NOT NULL, password VARCHAR(25) NOT NULL)");
     }
 
     @Override

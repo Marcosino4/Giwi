@@ -24,37 +24,22 @@ public class Login extends AppCompatActivity {
         Intent nIntent = new Intent(Login.this, SignIn.class);
         startActivity(nIntent);
     }
-    public void changeToShow(View view){
-        Intent nIntent = new Intent(Login.this, Show.class);
-        startActivity(nIntent);
-    }
+    public void changeToProfile(View view){
+        TextView emailTextView = findViewById(R.id.emailSingin);
+        TextView passTextView = findViewById(R.id.passSingin);
 
-    public void insertValues(View v){
-        TextView nameTextView = findViewById(R.id.UsernameLogin);
-        TextView emailTextView = findViewById(R.id.EmailLogin);
-
-        String nameString = nameTextView.getText().toString();
         String emailString = emailTextView.getText().toString();
+        String passString = passTextView.getText().toString();
+
 
         DatabaseAux aux = new DatabaseAux(Login.this);
         SQLiteDatabase db = aux.getWritableDatabase();
 
-        if(db != null && !nameString.isEmpty() && !emailString.isEmpty()) {
-            ContentValues values = new ContentValues();
-
-            values.put("name", nameString);
-            values.put("email", emailString);
-
-            long res = db.insert( "users", null, values);
-
-            if (res >= 0){
-                Toast.makeText(this, "Insertado correctamente", Toast.LENGTH_LONG).show();
-                nameTextView.setText("");
-                emailTextView.setText("");
-            }else{
-                Toast.makeText(this, "Fallo al insertar", Toast.LENGTH_LONG).show();
+            if(db != null && !emailString.isEmpty() && !passString.isEmpty()) {
+                Intent nIntent = new Intent(Login.this, Profile.class);
+                startActivity(nIntent);
             }
-            db.close();
         }
-    }
 }
+
+
