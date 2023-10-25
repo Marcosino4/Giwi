@@ -150,14 +150,14 @@
 
     <CheckBox
         android:id="@+id/RememberMe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="145dp"
+        android:layout_height="38dp"
         android:text="Remember me"
         android:textColor="#565656"
         app:layout_constraintBottom_toTopOf="@+id/guideline14"
-        app:layout_constraintEnd_toStartOf="@+id/guideline9"
+        app:layout_constraintEnd_toStartOf="@+id/guideline13"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toTopOf="@+id/guideline11"/>
+        app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
     <Button
         android:id="@+id/LogIn"
@@ -165,7 +165,7 @@
         android:layout_height="wrap_content"
         android:width="500px"
         android:backgroundTint="#404040"
-        android:onClick="changeToProfile"
+        android:onClick="logIn"
         android:text="Log in"
         android:textColorLink="#03D838"
         app:cornerRadius="86px"

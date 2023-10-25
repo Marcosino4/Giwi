@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
- <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3E3E3E"
     tools:context=".Profile">
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline33"
         android:layout_width="wrap_content"
@@ -100,7 +99,7 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.75" />
 
-   <Button
+    <Button
         android:id="@+id/update_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -115,14 +114,13 @@
         app:layout_constraintStart_toStartOf="@+id/guide_line_update_profile_left"
         app:layout_constraintTop_toTopOf="@+id/guide_line_upload_profile_top" />
 
-   <ImageView
-       android:id="@+id/profilePic"
-       android:layout_width="121dp"
-       android:layout_height="125dp"
-       app:layout_constraintBottom_toTopOf="@+id/guideline33"
-       app:layout_constraintEnd_toStartOf="@+id/guide_line_profile_pic_der"
-       app:layout_constraintStart_toStartOf="@+id/guide_line_upload_profil_pic_izq"
-       app:layout_constraintTop_toTopOf="@+id/guide_line_margen_top"
-       app:srcCompat="@drawable/frame_199" />
-
+    <ImageView
+        android:id="@+id/profilePic"
+        android:layout_width="121dp"
+        android:layout_height="125dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline33"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_profile_pic_der"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_upload_profil_pic_izq"
+        app:layout_constraintTop_toTopOf="@+id/guide_line_margen_top"
+        app:srcCompat="@drawable/frame_199" />
 </androidx.constraintlayout.widget.ConstraintLayout>

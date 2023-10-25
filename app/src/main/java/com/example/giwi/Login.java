@@ -2,7 +2,6 @@ package com.example.giwi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -24,7 +23,7 @@ public class Login extends AppCompatActivity {
         Intent nIntent = new Intent(Login.this, SignIn.class);
         startActivity(nIntent);
     }
-    public void changeToProfile(View view){
+    public void logIn(View view){
         TextView emailTextView = findViewById(R.id.emailSingin);
         TextView passTextView = findViewById(R.id.passSingin);
 
