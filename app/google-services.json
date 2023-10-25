@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "698021003782",
+    "project_id": "giwi-a8e1e",
+    "storage_bucket": "giwi-a8e1e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698021003782:android:5efdeb6572019c7acd3987",
+        "android_client_info": {
+          "package_name": "com.example.giwi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW4Uxh8athnxPmw9_4Ptr9x1FTeYF0Piw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
