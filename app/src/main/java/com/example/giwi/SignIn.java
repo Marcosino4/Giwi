@@ -1,16 +1,27 @@
 package com.example.giwi;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.Firebase;
+
 import com.example.giwi.Database.DatabaseAux;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class SignIn extends AppCompatActivity {
 
@@ -59,5 +70,23 @@ public class SignIn extends AppCompatActivity {
             }
             db.close();
         }
+        FirebaseFirestore firestoreDb = FirebaseFirestore.getInstance();
+        Map<String, Object> users = new HashMap<>();
+        users.put("name", nameString);
+        users.put("lastName", lastNameString);
+        users.put("email", emailString);
+        users.put("password", passString);
+
+        firestoreDb.collection("Giwi").document(emailString).set(users).addOnSuccessListener(new OnSuccessListener<Void>(){
+            @Override
+            public void onSuccess(Void unused) {
+                Log.d("DEBUG", "TODO OK");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("ERROR", e.getMessage());
+            }
+        });
     }
 }
