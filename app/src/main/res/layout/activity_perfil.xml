@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3E3E3E"
+<<<<<<< Updated upstream:app/src/main/res/layout/activity_perfil.xml
     tools:context=".Perfil">
 
     <androidx.constraintlayout.widget.Guideline
@@ -13,13 +14,60 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.28" />
+=======
+    tools:context=".Profile">
+>>>>>>> Stashed changes:app/src/main/res/layout/profile.xml
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guide_line_margen_top"
+        android:id="@+id/guide_line_horizontal_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.11" />
+        app:layout_constraintGuide_percent="0.06" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_line_horizontal_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.16" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_line_horizontal_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.18" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_line_horizontal_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.21" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_line_horizontal_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.22" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_line_vertical_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_line_vertical_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_line_margen_der"
@@ -36,6 +84,7 @@
         app:layout_constraintGuide_percent="0.65
  " />
 
+<<<<<<< Updated upstream:app/src/main/res/layout/activity_perfil.xml
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_line_margen_izq"
         android:layout_width="wrap_content"
@@ -124,5 +173,88 @@
        app:layout_constraintStart_toStartOf="@+id/guide_line_upload_profil_pic_izq"
        app:layout_constraintTop_toTopOf="@+id/guide_line_margen_top"
        app:srcCompat="@drawable/frame_199" />
+=======
+
+    <ImageView
+        android:id="@+id/profile_pic"
+        android:layout_width="82dp"
+        android:layout_height="76dp"
+        android:width="0dp"
+        android:height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line_horizontal_2"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_vertical_2"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_vertical_1"
+        app:layout_constraintTop_toTopOf="@+id/guide_line_horizontal_1"
+        app:srcCompat="@drawable/profile_circle" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="123dp"
+        android:layout_height="43dp"
+        android:width="0dp"
+        android:height="0dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:text="Username"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line_horizontal_2"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_profile_pic_der"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_vertical_2"
+        app:layout_constraintTop_toTopOf="@+id/guide_line_horizontal_1" />
+
+    <TextView
+        android:id="@+id/valoracion"
+        android:layout_width="144dp"
+        android:layout_height="17dp"
+        android:width="0dp"
+        android:height="0dp"
+        android:layout_marginTop="30dp"
+        android:text="☆☆☆☆☆ Valoracion"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line_horizontal_2"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_profile_pic_der"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_vertical_2"
+        app:layout_constraintTop_toTopOf="@+id/guide_line_horizontal_1" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="322dp"
+        android:layout_height="20dp"
+        android:width="0dp"
+        android:height="0dp"
+        android:fontFamily="@font/montserrat_thin"
+        android:gravity="center"
+        android:text="Productos en Venta"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line_horizontal_4"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_margen_der"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_vertical_1"
+        app:layout_constraintTop_toTopOf="@+id/guide_line_horizontal_3" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line_horizontal_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guide_line_horizontal_4"
+        tools:ignore="MissingConstraints" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="571dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="159dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        
+    </ScrollView>
+
+>>>>>>> Stashed changes:app/src/main/res/layout/profile.xml
 
 </androidx.constraintlayout.widget.ConstraintLayout>
