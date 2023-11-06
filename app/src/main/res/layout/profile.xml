@@ -6,19 +6,34 @@
     android:layout_height="match_parent"
     android:background="#3E3E3E"
     tools:context=".Profile">
+
+    <TextView
+        android:id="@+id/emailView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="loading"
+        android:textColor="#FEFEFE"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline36"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_update_profile_right"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_update_profile_left"
+        app:layout_constraintTop_toTopOf="@+id/guideline33"
+        app:layout_constraintVertical_bias="0.421" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.28" />
+        app:layout_constraintGuide_percent="0.29" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_line_margen_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.11" />
+        app:layout_constraintGuide_percent="0.05" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_line_margen_der"
@@ -92,6 +107,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.25" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_line_update_profile_right"
         android:layout_width="wrap_content"
@@ -100,27 +116,64 @@
         app:layout_constraintGuide_percent="0.75" />
 
     <Button
-        android:id="@+id/update_profile"
+        android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="540px"
         android:height="155px"
-        android:text="Update Profile"
-        app:cornerRadius="500px"
         android:backgroundTint="#5AEDC1"
         android:backgroundTintMode="add"
-        app:layout_constraintBottom_toTopOf="@+id/guide_line_upload_profile_bot"
+        android:onClick="changeToLogin"
+        android:text="Log out"
+        app:cornerRadius="500px"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line_margen_bot"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_update_profile_right"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_update_profile_left"
+        app:layout_constraintTop_toTopOf="@+id/guide_line_top_navigation_bar"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.22" />
+
+    <TextView
+        android:id="@+id/nameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="loading"
+        android:textColor="#FEFEFE"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline33"
         app:layout_constraintEnd_toStartOf="@+id/guide_line_update_profile_right"
         app:layout_constraintStart_toStartOf="@+id/guide_line_update_profile_left"
-        app:layout_constraintTop_toTopOf="@+id/guide_line_upload_profile_top" />
+        app:layout_constraintTop_toTopOf="@+id/guideline34" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
 
     <ImageView
-        android:id="@+id/profilePic"
-        android:layout_width="121dp"
-        android:layout_height="125dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline33"
+        android:id="@+id/imageView"
+        android:layout_width="93dp"
+        android:layout_height="93dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline35"
         app:layout_constraintEnd_toStartOf="@+id/guide_line_profile_pic_der"
         app:layout_constraintStart_toStartOf="@+id/guide_line_upload_profil_pic_izq"
         app:layout_constraintTop_toTopOf="@+id/guide_line_margen_top"
-        app:srcCompat="@drawable/frame_199" />
+        tools:srcCompat="@drawable/frame_199" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.36" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
