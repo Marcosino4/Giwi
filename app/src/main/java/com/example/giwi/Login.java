@@ -22,7 +22,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-        Toast.makeText(this, "holaa", Toast.LENGTH_SHORT).show();
+        
         aux = new DatabaseAux(Login.this);
         db = aux.getWritableDatabase();
 

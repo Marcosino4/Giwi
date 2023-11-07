@@ -62,7 +62,7 @@ public class SignIn extends AppCompatActivity {
 
             if (res >= 0){
                 Toast.makeText(this, "Insertado correctamente", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(SignIn.this, Profile.class));
+                startActivity(new Intent(SignIn.this, Login.class));
             }else{
                 Toast.makeText(this, "Fallo al insertar", Toast.LENGTH_LONG).show();
             }
