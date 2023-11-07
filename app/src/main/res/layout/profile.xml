@@ -16,24 +16,22 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline36"
         app:layout_constraintEnd_toStartOf="@+id/guide_line_update_profile_right"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="@+id/guide_line_update_profile_left"
-        app:layout_constraintTop_toTopOf="@+id/guideline33"
-        app:layout_constraintVertical_bias="0.421" />
+        app:layout_constraintTop_toTopOf="@+id/guideline33" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.29" />
+        app:layout_constraintGuide_percent="0.43" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_line_margen_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.05" />
+        app:layout_constraintGuide_percent="0.15" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_line_margen_der"
@@ -47,8 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.65
- " />
+        app:layout_constraintGuide_percent="0.65" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_line_margen_izq"
@@ -92,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.72" />
+        app:layout_constraintGuide_percent="0.74" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_line_upload_profil_pic_izq"
@@ -128,17 +125,15 @@
         app:cornerRadius="500px"
         app:layout_constraintBottom_toTopOf="@+id/guide_line_margen_bot"
         app:layout_constraintEnd_toStartOf="@+id/guide_line_update_profile_right"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guide_line_update_profile_left"
-        app:layout_constraintTop_toTopOf="@+id/guide_line_top_navigation_bar"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/guide_line_top_navigation_bar" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline34"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.22" />
+        app:layout_constraintGuide_percent="0.33" />
 
     <TextView
         android:id="@+id/nameView"
@@ -157,23 +152,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="93dp"
-        android:layout_height="93dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline35"
-        app:layout_constraintEnd_toStartOf="@+id/guide_line_profile_pic_der"
-        app:layout_constraintStart_toStartOf="@+id/guide_line_upload_profil_pic_izq"
-        app:layout_constraintTop_toTopOf="@+id/guide_line_margen_top"
-        tools:srcCompat="@drawable/frame_199" />
+        app:layout_constraintGuide_percent="0.31" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline36"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.36" />
+        app:layout_constraintGuide_percent="0.53" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="107dp"
+        android:layout_height="106dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline35"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_profile_pic_der"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_upload_profil_pic_izq"
+        app:layout_constraintTop_toTopOf="@+id/guide_line_margen_top"
+        app:srcCompat="@drawable/_49071" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
