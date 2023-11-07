@@ -32,8 +32,17 @@ public class Profile extends AppCompatActivity {
         tvName.setText(nameR);
         tvEmail.setText(emailR);
 
+        email = emailR;
 
 
+
+    }
+
+    public void changeToUpdate(View view){
+        Intent nIntent = new Intent(Profile.this, UpdateProfile.class);
+        nIntent.putExtra("email", email);
+        startActivity(nIntent);
+        finish();
     }
 
     public void changeToLogin(View view){

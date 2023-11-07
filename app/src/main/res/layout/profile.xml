@@ -183,4 +183,25 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.6" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.78" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="152dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#5AECC0"
+        android:onClick="changeToUpdate"
+        android:text="Update profile"
+        android:textSize="10sp"
+        app:cornerRadius="200px"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line_top_navigation_bar"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_update_profile_right"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_update_profile_left"
+        app:layout_constraintTop_toTopOf="@+id/guideline38" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
