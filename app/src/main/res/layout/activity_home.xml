@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3E3E3E"
+    tools:context=".Home">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="Guias"
+        android:textColor="#5AEEC2"
+        android:textSize="24.11dp"
+        app:layout_constraintBottom_toTopOf="@+id/bot_title"
+        app:layout_constraintEnd_toStartOf="@+id/right_title"
+        app:layout_constraintStart_toStartOf="@+id/left_title"
+        app:layout_constraintTop_toTopOf="@+id/top_title" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.027359782" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bot_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.07387141" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <ImageView
+        android:id="@+id/hamburguer"
+        android:layout_width="33dp"
+        android:layout_height="32dp"
+        android:backgroundTint="#5AEEC2"
+        app:layout_constraintBottom_toTopOf="@+id/bot_title"
+        app:layout_constraintEnd_toStartOf="@+id/right_hamburguer"
+        app:layout_constraintStart_toStartOf="@+id/left_hamburguer"
+        app:layout_constraintTop_toTopOf="@+id/top_title"
+        app:srcCompat="@drawable/menu_removebg_preview" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/first_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1
+" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/first_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <View
+        android:id="@+id/view_madrid"
+        android:layout_width="318dp"
+        android:layout_height="94dp"
+        android:background="#242424"
+        app:layout_constraintBottom_toTopOf="@+id/bot_madrid_view"
+        app:layout_constraintEnd_toStartOf="@+id/first_right"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/first_left"
+        app:layout_constraintTop_toTopOf="@+id/top_madrid_view"
+        app:layout_constraintVertical_bias="0.437" />
+
+    <TextView
+        android:id="@+id/title_madrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="Madrid"
+        android:textColor="#5AEEC2"
+        android:textSize="29.2dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline63"
+        app:layout_constraintEnd_toStartOf="@+id/left_hamburguer"
+        app:layout_constraintStart_toStartOf="@+id/left_title"
+        app:layout_constraintTop_toTopOf="@+id/top_madrid_view" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="98.33dp"
+        android:layout_height="94dp"
+        app:layout_constraintBottom_toTopOf="@+id/bot_madrid_view"
+        app:layout_constraintEnd_toStartOf="@+id/left_title"
+        app:layout_constraintStart_toStartOf="@+id/first_left"
+        app:layout_constraintTop_toTopOf="@+id/top_madrid_view"
+        app:srcCompat="@drawable/madridchiquito" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_madrid_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bot_madrid_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_hamburguer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_hamburguer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.88" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline63"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.27633378" />
+
+    <TextView
+        android:id="@+id/n_guias_madrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="120dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="3 Guias"
+        android:textColor="#5AEEC2"
+        android:textSize="19.23dp"
+        app:layout_constraintBottom_toTopOf="@+id/bot_madrid_view"
+        app:layout_constraintEnd_toStartOf="@+id/left_hamburguer"
+        app:layout_constraintStart_toStartOf="@+id/left_title"
+        app:layout_constraintTop_toTopOf="@+id/guideline63" />
+
+    <Button
+        android:id="@+id/guardar_madrid"
+        android:layout_width="18dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/botonsinguardar"
+        app:layout_constraintBottom_toTopOf="@+id/bot_madrid_view"
+        app:layout_constraintEnd_toStartOf="@+id/left_hamburguer"
+        app:layout_constraintStart_toStartOf="@+id/right_title"
+        app:layout_constraintTop_toTopOf="@+id/guideline63"
+        android:drawableTint="@color/black"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
