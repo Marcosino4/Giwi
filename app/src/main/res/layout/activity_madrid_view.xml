@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pantalla"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3E3E3E"
+    tools:context=".Madrid_View">
+
+    <TextView
+        android:id="@+id/madrid_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="Madrid"
+        android:textColor="#5AEEC2"
+        android:textSize="29.2dp"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line_top_imagen"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toTopOf="@+id/guide_line_top" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="401dp"
+        android:layout_height="213dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line_bot_imagen"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_left_imagen"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_right_imagen"
+        app:layout_constraintTop_toTopOf="@+id/guide_line_top_imagen"
+        app:srcCompat="@drawable/madrid" />
+
+    <View
+        android:id="@+id/palacio_real_view"
+        android:layout_width="318dp"
+        android:layout_height="49dp"
+        android:background="#242424"
+        app:circularflow_defaultRadius="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/bot_palacio_real"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toTopOf="@+id/top_palacio_real" />
+
+    <View
+        android:id="@+id/plaza_mayor_view"
+        android:layout_width="318dp"
+        android:layout_height="49dp"
+        android:background="#242424"
+        app:layout_constraintBottom_toTopOf="@+id/bot_plaza_mayor"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toTopOf="@+id/top_plaza_mayor" />
+
+    <View
+        android:id="@+id/museo_del_pradp_view"
+        android:layout_width="318dp"
+        android:layout_height="49dp"
+        android:background="#242424"
+        app:layout_constraintBottom_toTopOf="@+id/bot_museo_del_prado"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toTopOf="@+id/top_museo_del_prado" />
+
+
+    <ImageView
+        android:id="@+id/sonido_palacio_real"
+        android:layout_width="199dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="40dp"
+        android:rotationY="182"
+        app:layout_constraintBottom_toTopOf="@+id/bot_palacio_real"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toTopOf="@+id/top_palacio_real"
+        app:srcCompat="@drawable/sonido" />
+
+    <ImageView
+        android:id="@+id/sonido_plaza_mayor"
+        android:layout_width="199dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/bot_plaza_mayor"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toTopOf="@+id/top_plaza_mayor"
+        app:srcCompat="@drawable/sonido" />
+
+    <ImageView
+        android:id="@+id/sonido_museo_del_prado"
+        android:layout_width="199dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="40dp"
+        android:rotationY="-182"
+        app:layout_constraintBottom_toTopOf="@+id/bot_museo_del_prado"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toTopOf="@+id/top_museo_del_prado"
+        app:srcCompat="@drawable/sonido" />
+
+    <Button
+        android:id="@+id/play_palacio_real"
+        android:layout_width="17dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="230dp"
+        android:background="@drawable/play"
+        app:layout_constraintBottom_toTopOf="@+id/bot_palacio_real"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toTopOf="@+id/top_palacio_real" />
+
+    <Button
+        android:id="@+id/play_plaza_mayor"
+        android:layout_width="17dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="230dp"
+        android:background="@drawable/play"
+        app:layout_constraintBottom_toTopOf="@+id/bot_plaza_mayor"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toTopOf="@+id/top_plaza_mayor" />
+
+
+    <Button
+        android:id="@+id/play_museo_del_prado"
+        android:layout_width="17dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="230dp"
+        android:background="@drawable/play"
+        app:layout_constraintBottom_toTopOf="@+id/bot_museo_del_prado"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toTopOf="@+id/top_museo_del_prado" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_audios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_audios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_line_left_imagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_line_right_imagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_line_top_imagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.11" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_line_bot_imagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.40" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_palacio_real"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bot_palacio_real"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_plaza_mayor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.60" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bot_plaza_mayor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_museo_del_prado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bot_museo_del_prado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <TextView
+        android:id="@+id/palacio_real_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="220dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="Palacio Real"
+        android:textColor="#5AEEC2"
+        android:textSize="17.22dp"
+        app:layout_constraintBottom_toTopOf="@+id/top_palacio_real"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/plaza_mayor_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="220dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="Plaza Mayor"
+        android:textColor="#5AEEC2"
+        android:textSize="17.22dp"
+        app:layout_constraintBottom_toTopOf="@+id/top_plaza_mayor"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toTopOf="@+id/bot_palacio_real" />
+
+    <TextView
+        android:id="@+id/museo_del_prado_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="190dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="Museo del prado"
+        android:textColor="#5AEEC2"
+        android:textSize="17.22dp"
+        app:layout_constraintBottom_toTopOf="@+id/top_museo_del_prado"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toTopOf="@+id/bot_plaza_mayor" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="5.41dp"
+        android:layout_height="18.5dp"
+        android:layout_marginEnd="310dp"
+        android:background="@drawable/back"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line_top_imagen"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_line_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.0" />
+
+    <Button
+        android:id="@+id/menu"
+        android:layout_width="22dp"
+        android:layout_height="17.6dp"
+        android:layout_marginStart="290dp"
+        android:background="@drawable/menu"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line_top_imagen"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toTopOf="@+id/guide_line_top" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
