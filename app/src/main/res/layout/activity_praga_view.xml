@@ -99,6 +99,79 @@
         app:layout_constraintTop_toTopOf="@+id/top_plaza_mayor" />
 
 
+    <Button
+        android:id="@+id/back"
+        android:layout_width="5.41dp"
+        android:layout_height="18.5dp"
+        android:layout_marginEnd="310dp"
+        android:background="@drawable/back"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line_top_imagen"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/menu"
+        android:layout_width="22dp"
+        android:layout_height="17.6dp"
+        android:layout_marginStart="290dp"
+        android:background="@drawable/menu"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line_top_imagen"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toTopOf="@+id/guide_line_top" />
+
+    <TextView
+        android:id="@+id/palacio_real_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="220dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="Puente Carlos"
+        android:textColor="#5AEEC2"
+        android:textSize="17.22dp"
+        app:layout_constraintBottom_toTopOf="@+id/top_palacio_real"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toBottomOf="@+id/guide_line_bot_imagen" />
+
+    <TextView
+        android:id="@+id/plaza_mayor_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="190dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="Castillo de Praga"
+        android:textColor="#5AEEC2"
+        android:textSize="17.22dp"
+        app:layout_constraintBottom_toTopOf="@+id/top_plaza_mayor"
+        app:layout_constraintEnd_toStartOf="@+id/right_audios"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toTopOf="@+id/bot_palacio_real" />
+
+    <LinearLayout
+        android:id="@+id/guardar_praga"
+        android:layout_width="61dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/guardado_view"
+        app:layout_constraintBottom_toTopOf="@+id/guideline52"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline44"
+        app:layout_constraintTop_toTopOf="@+id/bot_museo_del_prado" >
+
+        <Button
+            android:id="@+id/boton_guardar_praga"
+            android:layout_width="18dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginLeft="22dp"
+            android:background="@drawable/botonsinguardar" />
+    </LinearLayout>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/left_audios"
         android:layout_width="wrap_content"
@@ -183,48 +256,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.85" />
 
-    <TextView
-        android:id="@+id/palacio_real_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="220dp"
-        android:fontFamily="@font/comfortaa_bold"
-        android:text="Puente Carlos"
-        android:textColor="#5AEEC2"
-        android:textSize="17.22dp"
-        app:layout_constraintBottom_toTopOf="@+id/top_palacio_real"
-        app:layout_constraintEnd_toStartOf="@+id/right_audios"
-        app:layout_constraintStart_toStartOf="@+id/left_audios"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <TextView
-        android:id="@+id/plaza_mayor_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="190dp"
-        android:fontFamily="@font/comfortaa_bold"
-        android:text="Castillo de Praga"
-        android:textColor="#5AEEC2"
-        android:textSize="17.22dp"
-        app:layout_constraintBottom_toTopOf="@+id/top_plaza_mayor"
-        app:layout_constraintEnd_toStartOf="@+id/right_audios"
-        app:layout_constraintStart_toStartOf="@+id/left_audios"
-        app:layout_constraintTop_toTopOf="@+id/bot_palacio_real" />
-
-
-
-    <Button
-        android:id="@+id/back"
-        android:layout_width="5.41dp"
-        android:layout_height="18.5dp"
-        android:layout_marginEnd="310dp"
-        android:background="@drawable/back"
-        app:layout_constraintBottom_toTopOf="@+id/guide_line_top_imagen"
-        app:layout_constraintEnd_toStartOf="@+id/right_audios"
-        app:layout_constraintStart_toStartOf="@+id/left_audios"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_line_top"
@@ -232,15 +263,18 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7931873" />
 
-    <Button
-        android:id="@+id/menu"
-        android:layout_width="22dp"
-        android:layout_height="17.6dp"
-        android:layout_marginStart="290dp"
-        android:background="@drawable/menu"
-        app:layout_constraintBottom_toTopOf="@+id/guide_line_top_imagen"
-        app:layout_constraintEnd_toStartOf="@+id/right_audios"
-        app:layout_constraintStart_toStartOf="@+id/left_audios"
-        app:layout_constraintTop_toTopOf="@+id/guide_line_top" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline52"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

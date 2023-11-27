@@ -155,7 +155,7 @@
         android:id="@+id/palacio_real_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="150dp"
         android:fontFamily="@font/comfortaa_bold"
         android:text="Palacio de Schönbrunn"
@@ -194,4 +194,39 @@
         app:layout_constraintEnd_toStartOf="@+id/right_audios"
         app:layout_constraintStart_toStartOf="@+id/left_audios"
         app:layout_constraintTop_toTopOf="@+id/guide_line_top" />
+
+    <LinearLayout
+        android:id="@+id/guardar_viena"
+        android:layout_width="61dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/guardado_view"
+        app:layout_constraintBottom_toTopOf="@+id/guideline52"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline44"
+        app:layout_constraintTop_toTopOf="@+id/bot_museo_del_prado" >
+
+        <Button
+            android:id="@+id/boton_guardar_viena"
+            android:layout_width="18dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginLeft="22dp"
+            android:background="@drawable/botonsinguardar" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7931873" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline52"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class Madrid_View extends AppCompatActivity {
     Button play_pause_pr;
@@ -14,6 +15,12 @@ public class Madrid_View extends AppCompatActivity {
     MediaPlayer mp_pr;
     MediaPlayer mp_pm;
     MediaPlayer mp_mdp;
+
+    LinearLayout guardar_madrid;
+    boolean estado_boton_vv;
+    Button boton_guardar_madrid;
+    int drawableResource;
+    int notDrawableResource;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +32,40 @@ public class Madrid_View extends AppCompatActivity {
         mp_pr = MediaPlayer.create(this,R.raw.prueba1);
         mp_pm = MediaPlayer.create(this,R.raw.prueba1);
         mp_mdp = MediaPlayer.create(this,R.raw.prueba1);
+
+        estado_boton_vv=true;
+        guardar_madrid= (LinearLayout)findViewById(R.id.guardar_madrid);
+        boton_guardar_madrid = (Button)findViewById(R.id.boton_guardar_madrid);
+        drawableResource= R.drawable.botonguardado;
+        notDrawableResource= R.drawable.botonsinguardar;
+
+        guardar_madrid.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if(estado_boton_vv == true){
+                    boton_guardar_madrid.setBackgroundResource(drawableResource);
+                    estado_boton_vv = false;
+                }else{
+                    boton_guardar_madrid.setBackgroundResource(notDrawableResource);
+                    estado_boton_vv = true;
+                }
+            }
+        });
+        boton_guardar_madrid.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if(estado_boton_vv == true){
+                    boton_guardar_madrid.setBackgroundResource(drawableResource);
+                    estado_boton_vv = false;
+                }else{
+                    boton_guardar_madrid.setBackgroundResource(notDrawableResource);
+                    estado_boton_vv = true;
+                }
+            }
+        });
+
         play_pause_pr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
