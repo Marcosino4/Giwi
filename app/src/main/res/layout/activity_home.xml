@@ -25,12 +25,12 @@
         android:id="@+id/hamburguer"
         android:layout_width="22dp"
         android:layout_height="17.6dp"
-        android:background="@drawable/menu"
+        android:background="@drawable/i_menu"
         app:layout_constraintBottom_toTopOf="@+id/bot_title"
         app:layout_constraintEnd_toStartOf="@+id/right_hamburguer"
         app:layout_constraintStart_toStartOf="@+id/left_hamburguer"
         app:layout_constraintTop_toTopOf="@+id/top_title"
-        app:srcCompat="@drawable/menu_removebg_preview" />
+        app:srcCompat="@drawable/i_menu_removebg_preview" />
     <LinearLayout
         android:id='@+id/madrid_contenedor'
         android:layout_width="318dp"
@@ -51,7 +51,7 @@
                 android:id='@+id/madrid_chiquito'
                 android:layout_width="98dp"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/madridchiquito" />
+                app:srcCompat="@drawable/i_madridchiquito" />
             <LinearLayout
                 android:id='@+id/contendorMadrid'
                 android:layout_width="wrap_content"
@@ -89,7 +89,7 @@
                     android:layout_height="25dp"
                     android:layout_marginLeft="280dp"
                     android:layout_marginTop="-30dp"
-                    android:background="@drawable/botonsinguardar"
+                    android:background="@drawable/i_botonsinguardar"
                     android:drawableTint="@color/black" />
             </LinearLayout>
         </RelativeLayout>
@@ -115,7 +115,7 @@
                 android:id='@+id/praga_chiquito'
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/pragachiquito" />
+                app:srcCompat="@drawable/i_pragachiquito" />
             <LinearLayout
                 android:id='@+id/contenedorPraga'
                 android:layout_width="wrap_content"
@@ -153,7 +153,7 @@
                     android:layout_height="25dp"
                     android:layout_marginLeft="280dp"
                     android:layout_marginTop="-30dp"
-                    android:background="@drawable/botonsinguardar"
+                    android:background="@drawable/i_botonsinguardar"
                     android:drawableTint="@color/black" />
             </LinearLayout>
         </RelativeLayout>
@@ -179,7 +179,7 @@
                 android:id='@+id/viena_chiquito'
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/vienachiquito" />
+                app:srcCompat="@drawable/i_vienachiquito" />
         <LinearLayout
             android:id='@+id/contenedorViena'
             android:layout_width="wrap_content"
@@ -217,7 +217,7 @@
                 android:layout_height="25dp"
                 android:layout_marginLeft="280dp"
                 android:layout_marginTop="-30dp"
-                android:background="@drawable/botonsinguardar"
+                android:background="@drawable/i_botonsinguardar"
                 android:drawableTint="@color/black" />
             </LinearLayout>
         </RelativeLayout>
@@ -244,7 +244,7 @@
                 android:id='@+id/venecia_chiquito'
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/veneciachiquito" />
+                app:srcCompat="@drawable/i_veneciachiquito" />
             <LinearLayout
                 android:id='@+id/contendorVenecia'
                 android:layout_width="wrap_content"
@@ -282,7 +282,7 @@
                     android:layout_height="25dp"
                     android:layout_marginLeft="280dp"
                     android:layout_marginTop="-30dp"
-                    android:background="@drawable/botonsinguardar"
+                    android:background="@drawable/i_botonsinguardar"
                     android:drawableTint="@color/black" />
             </LinearLayout>
         </RelativeLayout>

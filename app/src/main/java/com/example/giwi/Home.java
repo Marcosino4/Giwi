@@ -36,8 +36,8 @@ public class Home extends AppCompatActivity {
         guardar_praga = findViewById(R.id.guardar_praga);
         guardar_viena = findViewById(R.id.guardar_viena);
         guardar_venecia = findViewById(R.id.guardar_venecia);
-        drawableResource= R.drawable.botonguardado;
-        notDrawableResource= R.drawable.botonsinguardar;
+        drawableResource= R.drawable.i_botonguardado;
+        notDrawableResource= R.drawable.i_botonsinguardar;
         ly_m=(LinearLayout)findViewById(R.id.madrid_contenedor);
         ly_p=(LinearLayout)findViewById(R.id.praga_contenedor);
         ly_vi=(LinearLayout)findViewById(R.id.viena_contenedor);

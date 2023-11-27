@@ -26,11 +26,11 @@ public class Praga_View extends AppCompatActivity {
             public void onClick(View v) {
                 if(mp_pc.isPlaying()){
                     mp_pc.pause();
-                    play_pause_pc.setBackgroundResource(R.drawable.play);
+                    play_pause_pc.setBackgroundResource(R.drawable.i_play);
                 }else{
                     mp_pc.start();
-                    play_pause_cdp.setBackgroundResource(R.drawable.play);
-                    play_pause_pc.setBackgroundResource(R.drawable.pause);
+                    play_pause_cdp.setBackgroundResource(R.drawable.i_play);
+                    play_pause_pc.setBackgroundResource(R.drawable.i_pause);
                 }
             }
         });
@@ -39,11 +39,11 @@ public class Praga_View extends AppCompatActivity {
             public void onClick(View v) {
                 if(mp_cdp.isPlaying()){
                     mp_cdp.pause();
-                    play_pause_cdp.setBackgroundResource(R.drawable.play);
+                    play_pause_cdp.setBackgroundResource(R.drawable.i_play);
                 }else{
                     mp_cdp.start();
-                    play_pause_pc.setBackgroundResource(R.drawable.play);
-                    play_pause_cdp.setBackgroundResource(R.drawable.pause);
+                    play_pause_pc.setBackgroundResource(R.drawable.i_play);
+                    play_pause_cdp.setBackgroundResource(R.drawable.i_pause);
                 }
             }
         });

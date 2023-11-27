@@ -101,7 +101,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guide_line_profile_pic_der"
         app:layout_constraintStart_toStartOf="@+id/guide_line_upload_profil_pic_izq"
         app:layout_constraintTop_toTopOf="@+id/guideline35"
-        app:srcCompat="@drawable/_49071" />
+        app:srcCompat="@drawable/i_profile" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline35"

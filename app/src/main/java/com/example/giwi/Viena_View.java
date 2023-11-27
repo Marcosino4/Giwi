@@ -22,11 +22,11 @@ public class Viena_View extends AppCompatActivity {
             public void onClick(View v) {
                 if (mp_pds.isPlaying()) {
                     mp_pds.pause();
-                    play_pause_pds.setBackgroundResource(R.drawable.play);
+                    play_pause_pds.setBackgroundResource(R.drawable.i_play);
 
                 } else {
                     mp_pds.start();
-                    play_pause_pds.setBackgroundResource(R.drawable.pause);
+                    play_pause_pds.setBackgroundResource(R.drawable.i_pause);
                 }
             }
         });
