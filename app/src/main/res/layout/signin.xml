@@ -194,7 +194,7 @@
         android:layout_height="wrap_content"
         android:width="500px"
         android:backgroundTint="#404040"
-        android:onClick="insertValues"
+        android:onClick="signup"
         android:text="SIGN IN"
         android:textColorLink="#03D838"
         app:cornerRadius="500px"
