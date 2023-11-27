@@ -12,7 +12,7 @@ public class Venecia_View extends AppCompatActivity {
     Button play_pause_psm;
     Button play_pause_pdr;
     MediaPlayer mp_psm;
-    MediaPlayer mp_pdr:
+    MediaPlayer mp_pdr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
