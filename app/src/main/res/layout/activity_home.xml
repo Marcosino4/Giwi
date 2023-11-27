@@ -37,7 +37,7 @@
         android:layout_height="94dp"
         android:animateLayoutChanges="true"
         android:orientation="vertical"
-        android:background="#242424"
+        android:background="@drawable/shape"
         app:layout_constraintBottom_toTopOf="@+id/guide_line_bot_madrid"
         app:layout_constraintEnd_toStartOf="@+id/first_right"
         app:layout_constraintStart_toStartOf="@+id/first_left"
@@ -46,10 +46,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <ImageView
                 android:id='@+id/madrid_chiquito'
-                android:layout_width="98.33dp"
-                android:layout_height="94dp"
+                android:layout_width="98dp"
+                android:layout_height="match_parent"
                 app:srcCompat="@drawable/madridchiquito" />
             <LinearLayout
                 android:id='@+id/contendorMadrid'
@@ -100,7 +101,7 @@
         android:layout_height="94dp"
         android:animateLayoutChanges="true"
         android:orientation="vertical"
-        android:background="#242424"
+        android:background="@drawable/shape"
         app:layout_constraintBottom_toTopOf="@+id/guide_line_bot_praga"
         app:layout_constraintEnd_toStartOf="@+id/first_right"
         app:layout_constraintStart_toStartOf="@+id/first_left"
@@ -109,10 +110,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <ImageView
                 android:id='@+id/praga_chiquito'
-                android:layout_width="98.33dp"
-                android:layout_height="94dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 app:srcCompat="@drawable/pragachiquito" />
             <LinearLayout
                 android:id='@+id/contenedorPraga'
@@ -163,7 +165,7 @@
         android:layout_height="94dp"
         android:animateLayoutChanges="true"
         android:orientation="vertical"
-        android:background="#242424"
+        android:background="@drawable/shape"
         app:layout_constraintBottom_toTopOf="@+id/guide_line_bot_viena"
         app:layout_constraintEnd_toStartOf="@+id/first_right"
         app:layout_constraintStart_toStartOf="@+id/first_left"
@@ -172,11 +174,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-        <ImageView
-            android:id='@+id/viena_chiquito'
-            android:layout_width="98.33dp"
-            android:layout_height="94dp"
-            app:srcCompat="@drawable/vienachiquito" />
+
+            <ImageView
+                android:id='@+id/viena_chiquito'
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/vienachiquito" />
         <LinearLayout
             android:id='@+id/contenedorViena'
             android:layout_width="wrap_content"
@@ -227,7 +230,7 @@
         android:layout_height="94dp"
         android:animateLayoutChanges="true"
         android:orientation="vertical"
-        android:background="#242424"
+        android:background="@drawable/shape"
         app:layout_constraintBottom_toTopOf="@+id/guide_line_bot_venecia"
         app:layout_constraintEnd_toStartOf="@+id/first_right"
         app:layout_constraintStart_toStartOf="@+id/first_left"
@@ -236,10 +239,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <ImageView
                 android:id='@+id/venecia_chiquito'
-                android:layout_width="98.33dp"
-                android:layout_height="94dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 app:srcCompat="@drawable/veneciachiquito" />
             <LinearLayout
                 android:id='@+id/contendorVenecia'
