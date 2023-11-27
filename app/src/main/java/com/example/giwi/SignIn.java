@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,10 +17,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
-import com.example.giwi.Database.DatabaseAux;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -27,11 +30,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SignIn extends AppCompatActivity {
-
+    private static final String TAG = "SignUp";
+    private EditText nameEdit, lastNameEdit, emailEdit, passEdit;
+    private String nameString, lastNameString, emailString, passString;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+        //Seleccionar los Edits
         setContentView(R.layout.signin);
+        nameEdit = findViewById(R.id.nameSingin);
+        lastNameEdit = findViewById(R.id.lastNameSingin);
+        emailEdit = findViewById(R.id.emailSingin);
+        passEdit= findViewById(R.id.passSingin);
+
     }
 
     public void changeToLogin(View view){
@@ -39,17 +53,13 @@ public class SignIn extends AppCompatActivity {
         startActivity(nIntent);
     }
 
-    public void signup(){
-        TextView nameTextView = findViewById(R.id.nameSingin);
-        TextView lastNameTextView = findViewById(R.id.lastNameSingin);
-        TextView emailTextView = findViewById(R.id.emailSingin);
-        TextView passTextView = findViewById(R.id.passSingin);
+    public void signup(View view){
 
         //Pasar lo que hay en el textview a string
-        String nameString = nameTextView.getText().toString();
-        String lastNameString = lastNameTextView.getText().toString();
-        String emailString = emailTextView.getText().toString();
-        String passString = passTextView.getText().toString();
+        nameString = nameEdit.getText().toString();
+        lastNameString = lastNameEdit.getText().toString();
+        emailString = emailEdit.getText().toString();
+        passString = passEdit.getText().toString();
 
         if(!nameString.isEmpty() && !lastNameString.isEmpty() && !emailString.isEmpty() && !passString.isEmpty()){
             FirebaseAuth auth = FirebaseAuth.getInstance();
@@ -74,7 +84,21 @@ public class SignIn extends AppCompatActivity {
                                 finish();
 
                             }else{
-                                Toast.makeText(SignIn.this, "Error: Usuario no registrado", Toast.LENGTH_LONG).show();
+                                try{
+                                    throw task.getException();
+                                }catch(FirebaseAuthWeakPasswordException e){
+                                    passEdit.setError("Tu contraseña es muy debil, porfavor usa una mezcla de numeros y letras mayusculas y minusculas");
+                                    passEdit.requestFocus();
+                                }catch(FirebaseAuthInvalidCredentialsException e){
+                                    emailEdit.setError("Tu email no es valido o ya está en uso");
+                                    emailEdit.requestFocus();
+                                }catch(FirebaseAuthUserCollisionException e){
+                                    passEdit.setError("El usuario ya está registrado con estas credenciales");
+                                    passEdit.requestFocus();
+                                }catch(Exception e){
+                                    Log.e(TAG, e.getMessage());
+                                    Toast.makeText(SignIn.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                                }
                             }
                         }
                     });
