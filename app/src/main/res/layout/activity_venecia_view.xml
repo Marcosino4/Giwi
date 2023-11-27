@@ -78,7 +78,7 @@
         app:srcCompat="@drawable/sonido" />
 
     <Button
-        android:id="@+id/play_palacio_real"
+        android:id="@+id/play_piazza_san_marcos"
         android:layout_width="17dp"
         android:layout_height="20dp"
         android:layout_marginEnd="230dp"
@@ -89,7 +89,7 @@
         app:layout_constraintTop_toTopOf="@+id/top_palacio_real" />
 
     <Button
-        android:id="@+id/play_plaza_mayor"
+        android:id="@+id/play_puente_de_rialto"
         android:layout_width="17dp"
         android:layout_height="20dp"
         android:layout_marginEnd="230dp"

@@ -77,7 +77,7 @@
         app:srcCompat="@drawable/sonido" />
 
     <Button
-        android:id="@+id/play_palacio_real"
+        android:id="@+id/play_puente_carlos"
         android:layout_width="17dp"
         android:layout_height="20dp"
         android:layout_marginEnd="230dp"
@@ -88,7 +88,7 @@
         app:layout_constraintTop_toTopOf="@+id/top_palacio_real" />
 
     <Button
-        android:id="@+id/play_plaza_mayor"
+        android:id="@+id/play_castillo_de_praga"
         android:layout_width="17dp"
         android:layout_height="20dp"
         android:layout_marginEnd="230dp"
@@ -190,7 +190,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="220dp"
         android:fontFamily="@font/comfortaa_bold"
-        android:text="Puete Carlos"
+        android:text="Puente Carlos"
         android:textColor="#5AEEC2"
         android:textSize="17.22dp"
         app:layout_constraintBottom_toTopOf="@+id/top_palacio_real"
