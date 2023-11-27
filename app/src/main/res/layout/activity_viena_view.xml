@@ -35,7 +35,7 @@
         android:id="@+id/palacio_real_view"
         android:layout_width="318dp"
         android:layout_height="49dp"
-        android:background="#242424"
+        android:background="@drawable/shape"
         app:circularflow_defaultRadius="100dp"
         app:layout_constraintBottom_toTopOf="@+id/bot_palacio_real"
         app:layout_constraintEnd_toStartOf="@+id/right_audios"
@@ -114,14 +114,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.45" />
+        app:layout_constraintGuide_percent="0.47" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bot_palacio_real"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55" />
+        app:layout_constraintGuide_percent="0.57" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/top_plaza_mayor"
@@ -156,7 +156,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="150dp"
+        android:layout_marginEnd="110dp"
         android:fontFamily="@font/comfortaa_bold"
         android:text="Palacio de Schönbrunn"
         android:textColor="#5AEEC2"

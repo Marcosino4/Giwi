@@ -36,7 +36,7 @@
         android:id="@+id/palacio_real_view"
         android:layout_width="318dp"
         android:layout_height="49dp"
-        android:background="#242424"
+        android:background="@drawable/shape"
         app:circularflow_defaultRadius="100dp"
         app:layout_constraintBottom_toTopOf="@+id/bot_palacio_real"
         app:layout_constraintEnd_toStartOf="@+id/right_audios"
@@ -47,7 +47,7 @@
         android:id="@+id/plaza_mayor_view"
         android:layout_width="318dp"
         android:layout_height="49dp"
-        android:background="#242424"
+        android:background="@drawable/shape"
         app:layout_constraintBottom_toTopOf="@+id/bot_plaza_mayor"
         app:layout_constraintEnd_toStartOf="@+id/right_audios"
         app:layout_constraintStart_toStartOf="@+id/left_audios"
@@ -105,7 +105,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="180dp"
+        android:layout_marginEnd="150dp"
         android:fontFamily="@font/comfortaa_bold"
         android:text="Piazza San Marcos"
         android:textColor="#5AEEC2"
@@ -120,7 +120,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="200dp"
+        android:layout_marginEnd="170dp"
         android:fontFamily="@font/comfortaa_bold"
         android:text="Puente de Rialto"
         android:textColor="#5AEEC2"
@@ -219,28 +219,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.45" />
+        app:layout_constraintGuide_percent="0.47" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bot_palacio_real"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55" />
+        app:layout_constraintGuide_percent="0.56" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/top_plaza_mayor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.60" />
+        app:layout_constraintGuide_percent="0.62" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bot_plaza_mayor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.70" />
+        app:layout_constraintGuide_percent="0.72" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/top_museo_del_prado"
