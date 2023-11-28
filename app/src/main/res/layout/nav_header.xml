@@ -17,20 +17,24 @@
         android:src="@drawable/frame_199"/>
 
     //Introducir nombre de usuario
+
     <TextView
+        android:id="@+id/user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Admin"
+        android:layout_marginTop="20dp"
+        android:text="Loading"
         android:textColor="@color/white"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"/>
+        android:textStyle="bold" />
 
     //Introducir correo de usuario
+
     <TextView
+        android:id="@+id/user_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="admin@admin.com"
+        android:text="Loading"
         android:textColor="@color/white"
-        android:textSize="14sp"/>
+        android:textSize="14sp" />
 
 </LinearLayout>
