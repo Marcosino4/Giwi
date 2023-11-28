@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3E3E3E"
-    tools:context=".Home"
+    tools:context=".MainActivity"
     tools:ignore="ExtraText">
 
     <TextView
@@ -21,16 +21,6 @@
         app:layout_constraintStart_toStartOf="@+id/left_title"
         app:layout_constraintTop_toTopOf="@+id/top_title" />
 
-    <Button
-        android:id="@+id/hamburguer"
-        android:layout_width="22dp"
-        android:layout_height="17.6dp"
-        android:background="@drawable/menu"
-        app:layout_constraintBottom_toTopOf="@+id/bot_title"
-        app:layout_constraintEnd_toStartOf="@+id/right_hamburguer"
-        app:layout_constraintStart_toStartOf="@+id/left_hamburguer"
-        app:layout_constraintTop_toTopOf="@+id/top_title"
-        app:srcCompat="@drawable/menu_removebg_preview" />
     <LinearLayout
         android:id='@+id/madrid_contenedor'
         android:layout_width="318dp"
@@ -51,7 +41,7 @@
                 android:id='@+id/madrid_chiquito'
                 android:layout_width="98dp"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/madridchiquito" />
+                app:srcCompat="@drawable/i_madridchiquito" />
             <LinearLayout
                 android:id='@+id/contendorMadrid'
                 android:layout_width="wrap_content"
@@ -89,7 +79,7 @@
                     android:layout_height="25dp"
                     android:layout_marginLeft="280dp"
                     android:layout_marginTop="-30dp"
-                    android:background="@drawable/botonsinguardar"
+                    android:background="@drawable/i_botonsinguardar"
                     android:drawableTint="@color/black" />
             </LinearLayout>
         </RelativeLayout>
@@ -115,7 +105,7 @@
                 android:id='@+id/praga_chiquito'
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/pragachiquito" />
+                app:srcCompat="@drawable/i_pragachiquito" />
             <LinearLayout
                 android:id='@+id/contenedorPraga'
                 android:layout_width="wrap_content"
@@ -153,7 +143,7 @@
                     android:layout_height="25dp"
                     android:layout_marginLeft="280dp"
                     android:layout_marginTop="-30dp"
-                    android:background="@drawable/botonsinguardar"
+                    android:background="@drawable/i_botonsinguardar"
                     android:drawableTint="@color/black" />
             </LinearLayout>
         </RelativeLayout>
@@ -179,30 +169,48 @@
                 android:id='@+id/viena_chiquito'
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/vienachiquito" />
-        <LinearLayout
-            android:id='@+id/contenedorViena'
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart='true'
-            android:layout_marginStart='4dp'
-            android:layout_marginTop='2dp'
-            android:layout_toEndOf='@+id/viena_chiquito'
-            android:orientation='vertical'
-            android:layout_marginLeft="4dp"
-            android:layout_toRightOf='@+id/viena_chiquito'>
-
-            <TextView
-                android:layout_width="138dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="120dp"
-                android:layout_marginBottom="2dp"
-                android:fontFamily="@font/comfortaa_bold"
-                android:text="Viena"
-                android:textColor="#5AEEC2"
-                android:textSize="29.2dp" />
-            <TextView
+                app:srcCompat="@drawable/i_vienachiquito" />
+            <LinearLayout
+                android:id='@+id/contenedorViena'
                 android:layout_width="wrap_content"
+<<<<<<< HEAD:app/src/main/res/layout/fragment_home.xml
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart='true'
+                android:layout_marginStart='4dp'
+                android:layout_marginTop='2dp'
+                android:layout_toEndOf='@+id/viena_chiquito'
+                android:orientation='vertical'
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf='@+id/viena_chiquito'>
+
+                <TextView
+                    android:layout_width="138dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="120dp"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:text="Viena"
+                    android:textColor="#5AEEC2"
+                    android:textSize="29.2dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:layout_marginLeft="120dp"
+                    android:text="2 Guias"
+                    android:textColor="#5AEEC2"
+                    android:textSize="19.23dp"
+                    />
+                <Button
+                    android:id="@+id/guardar_viena"
+                    android:layout_width="18dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="280dp"
+                    android:layout_marginTop="-30dp"
+                    android:background="@drawable/i_botonsinguardar"
+                    android:drawableTint="@color/black" />
+=======
                 android:layout_height="match_parent"
                 android:layout_marginBottom="2dp"
                 android:fontFamily="@font/comfortaa_bold"
@@ -219,6 +227,7 @@
                 android:layout_marginTop="-30dp"
                 android:background="@drawable/botonsinguardar"
                 android:drawableTint="@color/black" />
+>>>>>>> main:app/src/main/res/layout/activity_home.xml
             </LinearLayout>
         </RelativeLayout>
     </LinearLayout>
@@ -244,7 +253,7 @@
                 android:id='@+id/venecia_chiquito'
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/veneciachiquito" />
+                app:srcCompat="@drawable/i_veneciachiquito" />
             <LinearLayout
                 android:id='@+id/contendorVenecia'
                 android:layout_width="wrap_content"
@@ -282,7 +291,7 @@
                     android:layout_height="25dp"
                     android:layout_marginLeft="280dp"
                     android:layout_marginTop="-30dp"
-                    android:background="@drawable/botonsinguardar"
+                    android:background="@drawable/i_botonsinguardar"
                     android:drawableTint="@color/black" />
             </LinearLayout>
         </RelativeLayout>
@@ -329,20 +338,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.9" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/left_hamburguer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.88" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/right_hamburguer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.96" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_line_top_madrid"

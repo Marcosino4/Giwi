@@ -26,9 +26,9 @@ public class Madrid_View extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_madrid_view);
-        play_pause_pr = (Button) findViewById(R.id.play_puente_carlos);
-        play_pause_pm = (Button) findViewById(R.id.play_castillo_de_praga);
-        play_pause_mdp = (Button) findViewById(R.id.play_museo_del_prado);
+        play_pause_pr = findViewById(R.id.play_puente_carlos);
+        play_pause_pm = findViewById(R.id.play_castillo_de_praga);
+        play_pause_mdp = findViewById(R.id.play_museo_del_prado);
         mp_pr = MediaPlayer.create(this,R.raw.prueba1);
         mp_pm = MediaPlayer.create(this,R.raw.prueba1);
         mp_mdp = MediaPlayer.create(this,R.raw.prueba1);
@@ -71,13 +71,13 @@ public class Madrid_View extends AppCompatActivity {
             public void onClick(View view) {
                 if(mp_pr.isPlaying()){
                     mp_pr.pause();
-                    play_pause_pr.setBackgroundResource(R.drawable.play);
+                    play_pause_pr.setBackgroundResource(R.drawable.i_play);
 
                 }else{
                     mp_pr.start();
-                    play_pause_pm.setBackgroundResource(R.drawable.play);
-                    play_pause_mdp.setBackgroundResource(R.drawable.play);
-                    play_pause_pr.setBackgroundResource(R.drawable.pause);
+                    play_pause_pm.setBackgroundResource(R.drawable.i_play);
+                    play_pause_mdp.setBackgroundResource(R.drawable.i_play);
+                    play_pause_pr.setBackgroundResource(R.drawable.i_pause);
                 }
             }
         });
@@ -86,13 +86,13 @@ public class Madrid_View extends AppCompatActivity {
             public void onClick(View view) {
                 if(mp_pm.isPlaying()){
                     mp_pm.pause();
-                    play_pause_pm.setBackgroundResource(R.drawable.play);
+                    play_pause_pm.setBackgroundResource(R.drawable.i_play);
 
                 }else{
                     mp_pm.start();
-                    play_pause_pr.setBackgroundResource(R.drawable.play);
-                    play_pause_mdp.setBackgroundResource(R.drawable.play);
-                    play_pause_pm.setBackgroundResource(R.drawable.pause);
+                    play_pause_pr.setBackgroundResource(R.drawable.i_play);
+                    play_pause_mdp.setBackgroundResource(R.drawable.i_play);
+                    play_pause_pm.setBackgroundResource(R.drawable.i_pause);
                 }
             }
         });
@@ -102,13 +102,13 @@ public class Madrid_View extends AppCompatActivity {
                 if(mp_mdp.isPlaying()){
                     mp_mdp.pause();
 
-                    play_pause_mdp.setBackgroundResource(R.drawable.play);
+                    play_pause_mdp.setBackgroundResource(R.drawable.i_play);
 
                 }else{
                     mp_mdp.start();
-                    play_pause_pm.setBackgroundResource(R.drawable.play);
-                    play_pause_pr.setBackgroundResource(R.drawable.play);
-                    play_pause_mdp.setBackgroundResource(R.drawable.pause);
+                    play_pause_pm.setBackgroundResource(R.drawable.i_play);
+                    play_pause_pr.setBackgroundResource(R.drawable.i_play);
+                    play_pause_mdp.setBackgroundResource(R.drawable.i_pause);
                 }
             }
         });
