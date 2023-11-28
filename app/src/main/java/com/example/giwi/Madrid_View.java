@@ -6,9 +6,12 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class Madrid_View extends AppCompatActivity {
+    ImageView back;
+
     Button play_pause_pr;
     Button play_pause_pm;
     Button play_pause_mdp;
@@ -29,15 +32,24 @@ public class Madrid_View extends AppCompatActivity {
         play_pause_pr = (Button) findViewById(R.id.play_puente_carlos);
         play_pause_pm = (Button) findViewById(R.id.play_castillo_de_praga);
         play_pause_mdp = (Button) findViewById(R.id.play_museo_del_prado);
-        mp_pr = MediaPlayer.create(this,R.raw.palacioreal);
-        mp_pm = MediaPlayer.create(this,R.raw.plazamayor);
-        mp_mdp = MediaPlayer.create(this,R.raw.elprado);
+        mp_pr = MediaPlayer.create(this, R.raw.palacioreal);
+        mp_pm = MediaPlayer.create(this, R.raw.plazamayor);
+        mp_mdp = MediaPlayer.create(this, R.raw.elprado);
 
-        estado_boton_vv=true;
-        guardar_madrid= (LinearLayout)findViewById(R.id.guardar_madrid);
-        boton_guardar_madrid = (Button)findViewById(R.id.boton_guardar_madrid);
-        drawableResource= R.drawable.botonguardado;
-        notDrawableResource= R.drawable.botonsinguardar;
+        estado_boton_vv = true;
+        guardar_madrid = (LinearLayout) findViewById(R.id.guardar_madrid);
+        boton_guardar_madrid = (Button) findViewById(R.id.boton_guardar_madrid);
+        drawableResource = R.drawable.botonguardado;
+        notDrawableResource = R.drawable.botonsinguardar;
+
+        back = (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                onBackPressed();
+
+            }
+        });
 
         guardar_madrid.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -137,17 +137,6 @@
         app:layout_constraintTop_toTopOf="@+id/top_museo_del_prado" />
 
     <Button
-        android:id="@+id/back"
-        android:layout_width="5.41dp"
-        android:layout_height="18.5dp"
-        android:layout_marginEnd="310dp"
-        android:background="@drawable/back"
-        app:layout_constraintBottom_toTopOf="@+id/guide_line_top_imagen"
-        app:layout_constraintEnd_toStartOf="@+id/right_audios"
-        app:layout_constraintStart_toStartOf="@+id/left_audios"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/menu"
         android:layout_width="22dp"
         android:layout_height="17.6dp"
@@ -328,5 +317,16 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.98" />
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="10dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="280dp"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line_top_imagen"
+        app:layout_constraintEnd_toStartOf="@+id/guideline44"
+        app:layout_constraintStart_toStartOf="@+id/left_audios"
+        app:layout_constraintTop_toTopOf="@+id/guide_line_top"
+        app:srcCompat="@drawable/back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

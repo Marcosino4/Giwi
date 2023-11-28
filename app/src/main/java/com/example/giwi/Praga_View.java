@@ -6,9 +6,12 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class Praga_View extends AppCompatActivity {
+    ImageView back;
+
     Button play_pause_pc;
     Button play_pause_cdp;
     MediaPlayer mp_pc;
@@ -33,6 +36,15 @@ public class Praga_View extends AppCompatActivity {
         boton_guardar_praga = (Button)findViewById(R.id.boton_guardar_praga);
         drawableResource= R.drawable.botonguardado;
         notDrawableResource= R.drawable.botonsinguardar;
+
+        back = (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                onBackPressed();
+
+            }
+        });
         guardar_praga.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
