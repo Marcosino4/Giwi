@@ -8,17 +8,12 @@ import java.util.ArrayList;
 public class ReadWriteUserDetails {
     private String nombre, apellido;
 
-    private ArrayList<String> listaFavoritos;
-
     public ReadWriteUserDetails() {
     }
 
-    public ReadWriteUserDetails(String nombre, String apellido, ArrayList<String> listaFavoritos) {
+    public ReadWriteUserDetails(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.listaFavoritos=listaFavoritos;
-
-
     }
 
     public String getNombre() {
@@ -37,11 +32,4 @@ public class ReadWriteUserDetails {
         this.apellido = apellido;
     }
 
-    public ArrayList<String> getListaFavoritos() {
-        return listaFavoritos;
-    }
-
-    public void setListaFavoritos(ArrayList<String> listaFavoritos) {
-        this.listaFavoritos = listaFavoritos;
-    }
 }

@@ -80,7 +80,7 @@ public class SignIn extends AppCompatActivity {
                                 FirebaseUser user = auth.getCurrentUser();
 
                                 //Añadir los datos de los usuarios
-                                ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(nameString, lastNameString, new ArrayList<String>());
+                                ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(nameString, lastNameString);
 
                                 //Referencia de usuarios
                                 FirebaseDatabase database = FirebaseDatabase.getInstance();

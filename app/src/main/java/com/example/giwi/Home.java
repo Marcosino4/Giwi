@@ -8,7 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.google.firebase.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Home extends AppCompatActivity {
     Button guardar_madrid;
@@ -26,6 +30,7 @@ public class Home extends AppCompatActivity {
 
     int drawableResource;
     int notDrawableResource;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,7 +81,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                
+
 
                 if(estado_boton_m == true){
                     guardar_madrid.setBackgroundResource(drawableResource);
