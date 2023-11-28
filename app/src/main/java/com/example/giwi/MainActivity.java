@@ -9,9 +9,11 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentContainerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,24 +45,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             setSupportActionBar(toolbar);
 
             drawerLayout = findViewById(R.id.drawer_layout);
-            NavigationView navigationView = findViewById(R.id.nav_view);
-            navigationView.setNavigationItemSelectedListener(this);
+            //Seleccionar TextViews del NavigationView
+            NavigationView navigationView =(NavigationView) findViewById(R.id.nav_view);
+            View headerView = navigationView.getHeaderView(0);
 
-            userNameMenu = navigationView.findViewById(R.id.user_name);
-            userEmailMenu = navigationView.findViewById(R.id.user_email);
+            //Text views para cambiarles el texto a los datos del usuario
+            userNameMenu = (TextView) headerView.findViewById(R.id.user_name);
+            userEmailMenu = (TextView) headerView.findViewById(R.id.user_email);
+
+            navigationView.setNavigationItemSelectedListener(this);
 
             authProfile = FirebaseAuth.getInstance();
             FirebaseUser firebaseUser = authProfile.getCurrentUser();
 
             String userID = firebaseUser.getUid();
             DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Users");
+
             referenceProfile.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     ReadWriteUserDetails readUserDetails = snapshot.getValue(ReadWriteUserDetails.class);
                     retrievedEmail = firebaseUser.getEmail();
+                    retrievedName = readUserDetails.getNombre();
+                    retrievedLastname = readUserDetails.getApellido();
 
-                    userNameMenu.setText(retrievedEmail);
+                    String nombreCompleto = retrievedName + " " + retrievedLastname;
+
+                    userNameMenu.setText(nombreCompleto);
+                    userEmailMenu.setText(retrievedEmail);
                 }
 
                 @Override
@@ -68,7 +80,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     Toast.makeText(MainActivity.this, "Error cargando los datos", Toast.LENGTH_LONG).show();
                 }
             });
-
 
 
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav,
@@ -81,15 +92,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 navigationView.setCheckedItem(R.id.nav_home);
             }
 
-
-
         }
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            //Opcion home del menu desplegable
             if (item.getItemId() == R.id.nav_home) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+
+            //Cerrar sesion
             }else if(item.getItemId() == R.id.nav_logout){
                 Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show();
+                authProfile.signOut();
+
+                Intent intent = new Intent(MainActivity.this, Login.class);
+                startActivity(intent);
+
 
             }
             drawerLayout.closeDrawer(GravityCompat.START);
