@@ -6,12 +6,19 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class Praga_View extends AppCompatActivity {
     Button play_pause_pc;
     Button play_pause_cdp;
     MediaPlayer mp_pc;
     MediaPlayer mp_cdp;
+
+    LinearLayout guardar_praga;
+    boolean estado_boton_vv;
+    Button boton_guardar_praga;
+    int drawableResource;
+    int notDrawableResource;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +28,35 @@ public class Praga_View extends AppCompatActivity {
         mp_pc=MediaPlayer.create(this,R.raw.prueba1);
         mp_cdp=MediaPlayer.create(this,R.raw.prueba1);
 
+        estado_boton_vv=true;
+        guardar_praga= (LinearLayout)findViewById(R.id.guardar_praga);
+        boton_guardar_praga = (Button)findViewById(R.id.boton_guardar_praga);
+        drawableResource= R.drawable.botonguardado;
+        notDrawableResource= R.drawable.botonsinguardar;
+        guardar_praga.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(estado_boton_vv == true){
+                    boton_guardar_praga.setBackgroundResource(drawableResource);
+                    estado_boton_vv = false;
+                }else{
+                    boton_guardar_praga.setBackgroundResource(notDrawableResource);
+                    estado_boton_vv = true;
+                }
+            }
+        });
+        boton_guardar_praga.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(estado_boton_vv == true){
+                    boton_guardar_praga.setBackgroundResource(drawableResource);
+                    estado_boton_vv = false;
+                }else{
+                    boton_guardar_praga.setBackgroundResource(notDrawableResource);
+                    estado_boton_vv = true;
+                }
+            }
+        });
         play_pause_pc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

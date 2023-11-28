@@ -173,6 +173,7 @@
             <LinearLayout
                 android:id='@+id/contenedorViena'
                 android:layout_width="wrap_content"
+<<<<<<< HEAD:app/src/main/res/layout/fragment_home.xml
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart='true'
                 android:layout_marginStart='4dp'
@@ -209,6 +210,24 @@
                     android:layout_marginTop="-30dp"
                     android:background="@drawable/i_botonsinguardar"
                     android:drawableTint="@color/black" />
+=======
+                android:layout_height="match_parent"
+                android:layout_marginBottom="2dp"
+                android:fontFamily="@font/comfortaa_bold"
+                android:layout_marginLeft="120dp"
+                android:text="1 Guias"
+                android:textColor="#5AEEC2"
+                android:textSize="19.23dp"
+                />
+            <Button
+                android:id="@+id/guardar_viena"
+                android:layout_width="18dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="280dp"
+                android:layout_marginTop="-30dp"
+                android:background="@drawable/botonsinguardar"
+                android:drawableTint="@color/black" />
+>>>>>>> main:app/src/main/res/layout/activity_home.xml
             </LinearLayout>
         </RelativeLayout>
     </LinearLayout>
