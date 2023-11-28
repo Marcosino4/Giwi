@@ -36,8 +36,8 @@ public class Madrid_View extends AppCompatActivity {
         estado_boton_vv=true;
         guardar_madrid= (LinearLayout)findViewById(R.id.guardar_madrid);
         boton_guardar_madrid = (Button)findViewById(R.id.boton_guardar_madrid);
-        drawableResource= R.drawable.botonguardado;
-        notDrawableResource= R.drawable.botonsinguardar;
+        drawableResource= R.drawable.i_botonguardado;
+        notDrawableResource= R.drawable.i_botonsinguardar;
 
         guardar_madrid.setOnClickListener(new View.OnClickListener() {
             @Override

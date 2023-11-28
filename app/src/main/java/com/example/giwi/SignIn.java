@@ -94,7 +94,7 @@ public class SignIn extends AppCompatActivity {
                                            user.sendEmailVerification();
 
                                            //Una vez registrado el usuario, accede a la pantalla de home
-                                           Intent intent =  new Intent(SignIn.this, Home.class);
+                                           Intent intent =  new Intent(SignIn.this, Madrid_View.class);
                                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK |
                                                    Intent.FLAG_ACTIVITY_NEW_TASK);
                                            startActivity(intent);

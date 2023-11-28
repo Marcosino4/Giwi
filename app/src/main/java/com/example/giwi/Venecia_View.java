@@ -33,8 +33,8 @@ public class Venecia_View extends AppCompatActivity {
         estado_boton_vv=true;
         guardar_venecia= (LinearLayout)findViewById(R.id.guardar_venecia);
         boton_guardar_venecia = (Button)findViewById(R.id.boton_guardar_venecia);
-        drawableResource= R.drawable.botonguardado;
-        notDrawableResource= R.drawable.botonsinguardar;
+        drawableResource= R.drawable.i_botonguardado;
+        notDrawableResource= R.drawable.i_botonsinguardar;
         guardar_venecia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

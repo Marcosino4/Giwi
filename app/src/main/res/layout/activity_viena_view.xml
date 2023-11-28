@@ -184,17 +184,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.0" />
 
-    <Button
-        android:id="@+id/menu"
-        android:layout_width="22dp"
-        android:layout_height="17.6dp"
-        android:layout_marginStart="290dp"
-        android:background="@drawable/i_menu"
-        app:layout_constraintBottom_toTopOf="@+id/guide_line_top_imagen"
-        app:layout_constraintEnd_toStartOf="@+id/right_audios"
-        app:layout_constraintStart_toStartOf="@+id/left_audios"
-        app:layout_constraintTop_toTopOf="@+id/guide_line_top" />
-
     <LinearLayout
         android:id="@+id/guardar_viena"
         android:layout_width="61dp"
@@ -213,7 +202,7 @@
             android:layout_height="25dp"
             android:layout_marginTop="19dp"
             android:layout_marginLeft="22dp"
-            android:background="@drawable/botonsinguardar" />
+            android:background="@drawable/i_botonsinguardar" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline

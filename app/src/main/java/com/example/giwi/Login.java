@@ -61,7 +61,7 @@ public class Login extends AppCompatActivity {
                     if(task.isSuccessful()){
                         Toast.makeText(Login.this, "Iniciando sesión", Toast.LENGTH_LONG).show();
 
-                        Intent intent = new Intent(Login.this, Home.class);
+                        Intent intent = new Intent(Login.this, MainActivity.class);
 
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK |
                                 Intent.FLAG_ACTIVITY_NEW_TASK);

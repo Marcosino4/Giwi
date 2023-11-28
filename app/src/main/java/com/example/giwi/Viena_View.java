@@ -28,8 +28,8 @@ public class Viena_View extends AppCompatActivity {
         estado_boton_vv=true;
         guardar_viena= (LinearLayout)findViewById(R.id.guardar_viena);
         boton_guardar_viena = (Button)findViewById(R.id.boton_guardar_viena);
-        drawableResource= R.drawable.botonguardado;
-        notDrawableResource= R.drawable.botonsinguardar;
+        drawableResource= R.drawable.i_botonguardado;
+        notDrawableResource= R.drawable.i_botonsinguardar;
 
         guardar_viena.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,19 +60,13 @@ public class Viena_View extends AppCompatActivity {
             public void onClick(View v) {
                 if (mp_pds.isPlaying()) {
                     mp_pds.pause();
-<<<<<<< HEAD
                     play_pause_pds.setBackgroundResource(R.drawable.i_play);
 
                 } else {
                     mp_pds.start();
                     play_pause_pds.setBackgroundResource(R.drawable.i_pause);
-=======
-                    play_pause_pds.setBackgroundResource(play);
 
-                } else {
-                    mp_pds.start();
-                    play_pause_pds.setBackgroundResource(pause);
->>>>>>> main
+                    play_pause_pds.setBackgroundResource(i_play);
                 }
             }
         });

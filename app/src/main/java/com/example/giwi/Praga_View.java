@@ -31,8 +31,8 @@ public class Praga_View extends AppCompatActivity {
         estado_boton_vv=true;
         guardar_praga= (LinearLayout)findViewById(R.id.guardar_praga);
         boton_guardar_praga = (Button)findViewById(R.id.boton_guardar_praga);
-        drawableResource= R.drawable.botonguardado;
-        notDrawableResource= R.drawable.botonsinguardar;
+        drawableResource= R.drawable.i_botonguardado;
+        notDrawableResource= R.drawable.i_botonsinguardar;
         guardar_praga.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
