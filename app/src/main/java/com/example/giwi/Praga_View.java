@@ -25,8 +25,8 @@ public class Praga_View extends AppCompatActivity {
         setContentView(R.layout.activity_praga_view);
         play_pause_pc=(Button)findViewById(R.id.play_puente_carlos);
         play_pause_cdp=(Button)findViewById(R.id.play_castillo_de_praga);
-        mp_pc=MediaPlayer.create(this,R.raw.prueba1);
-        mp_cdp=MediaPlayer.create(this,R.raw.prueba1);
+        mp_pc=MediaPlayer.create(this,R.raw.puentecarlos);
+        mp_cdp=MediaPlayer.create(this,R.raw.castillodepraga);
 
         estado_boton_vv=true;
         guardar_praga= (LinearLayout)findViewById(R.id.guardar_praga);
