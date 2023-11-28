@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Home extends AppCompatActivity {
     Button guardar_madrid;
     Button guardar_praga;
@@ -73,6 +75,9 @@ public class Home extends AppCompatActivity {
         guardar_madrid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                
+
                 if(estado_boton_m == true){
                     guardar_madrid.setBackgroundResource(drawableResource);
                     estado_boton_m = false;

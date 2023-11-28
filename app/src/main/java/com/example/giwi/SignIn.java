@@ -24,10 +24,14 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.locks.ReadWriteLock;
 
 public class SignIn extends AppCompatActivity {
     private static final String TAG = "SignUp";
@@ -61,8 +65,11 @@ public class SignIn extends AppCompatActivity {
         emailString = emailEdit.getText().toString();
         passString = passEdit.getText().toString();
 
+        //Si todos los campos estan rellenos, entonces
         if(!nameString.isEmpty() && !lastNameString.isEmpty() && !emailString.isEmpty() && !passString.isEmpty()){
+            //Crear instancia del FirebaseAuth
             FirebaseAuth auth = FirebaseAuth.getInstance();
+            //Crear usuario con los datos introducidos
             auth.createUserWithEmailAndPassword(emailString, passString).addOnCompleteListener(SignIn.this,
                     new OnCompleteListener<AuthResult>() {
                         @Override
@@ -72,18 +79,35 @@ public class SignIn extends AppCompatActivity {
                                 Toast.makeText(SignIn.this, "Usuario Registrado", Toast.LENGTH_LONG).show();
                                 FirebaseUser user = auth.getCurrentUser();
 
-                                //Mandar correo de verificacion
-                                user.sendEmailVerification();
+                                //Añadir los datos de los usuarios
+                                ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(nameString, lastNameString, new ArrayList<String>());
 
-                                //Una vez registrado el usuario, accede a la pantalla de home
-                                Intent intent =  new Intent(SignIn.this, Home.class);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                                        Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
+                                //Referencia de usuarios
+                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                DatabaseReference ref = database.getReference("Users");
+                               DatabaseReference usersRef = ref.child(user.getUid());
+                               usersRef.setValue(writeUserDetails).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                   @Override
+                                   public void onComplete(@NonNull Task<Void> task) {
+                                       if(task.isSuccessful()){
+                                           //Enviar email de verificacion
+                                           user.sendEmailVerification();
 
-                                finish();
+                                           //Una vez registrado el usuario, accede a la pantalla de home
+                                           Intent intent =  new Intent(SignIn.this, Home.class);
+                                           intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                                   Intent.FLAG_ACTIVITY_NEW_TASK);
+                                           startActivity(intent);
+
+                                           finish();
+                                       }else{
+                                           Toast.makeText(SignIn.this, "El registro ha fallado", Toast.LENGTH_LONG).show();
+                                       }
+                                   }
+                               });
 
                             }else{
+                                //Excepciones del metodo de registro de FirebaseAuth
                                 try{
                                     throw task.getException();
                                 }catch(FirebaseAuthWeakPasswordException e){
