@@ -26,12 +26,12 @@ public class Madrid_View extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_madrid_view);
-        play_pause_pr = findViewById(R.id.play_puente_carlos);
-        play_pause_pm = findViewById(R.id.play_castillo_de_praga);
-        play_pause_mdp = findViewById(R.id.play_museo_del_prado);
-        mp_pr = MediaPlayer.create(this,R.raw.prueba1);
-        mp_pm = MediaPlayer.create(this,R.raw.prueba1);
-        mp_mdp = MediaPlayer.create(this,R.raw.prueba1);
+        play_pause_pr = (Button) findViewById(R.id.play_puente_carlos);
+        play_pause_pm = (Button) findViewById(R.id.play_castillo_de_praga);
+        play_pause_mdp = (Button) findViewById(R.id.play_museo_del_prado);
+        mp_pr = MediaPlayer.create(this,R.raw.palacioreal);
+        mp_pm = MediaPlayer.create(this,R.raw.plazamayor);
+        mp_mdp = MediaPlayer.create(this,R.raw.elprado);
 
         estado_boton_vv=true;
         guardar_madrid= (LinearLayout)findViewById(R.id.guardar_madrid);
@@ -40,7 +40,6 @@ public class Madrid_View extends AppCompatActivity {
         notDrawableResource= R.drawable.botonsinguardar;
 
         guardar_madrid.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 if(estado_boton_vv == true){
@@ -53,7 +52,6 @@ public class Madrid_View extends AppCompatActivity {
             }
         });
         boton_guardar_madrid.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 if(estado_boton_vv == true){

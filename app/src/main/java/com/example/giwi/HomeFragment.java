@@ -78,7 +78,10 @@ git
         guardar_madrid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (estado_boton_m) {
+
+
+
+                if(estado_boton_m == true){
                     guardar_madrid.setBackgroundResource(drawableResource);
                     estado_boton_m = false;
                 } else {

@@ -9,24 +9,47 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
-import com.example.giwi.Database.DatabaseAux;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.locks.ReadWriteLock;
 
 public class SignIn extends AppCompatActivity {
-
+    private static final String TAG = "SignUp";
+    private EditText nameEdit, lastNameEdit, emailEdit, passEdit;
+    private String nameString, lastNameString, emailString, passString;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+        //Seleccionar los Edits
         setContentView(R.layout.signin);
+        nameEdit = findViewById(R.id.nameSingin);
+        lastNameEdit = findViewById(R.id.lastNameSingin);
+        emailEdit = findViewById(R.id.emailSingin);
+        passEdit= findViewById(R.id.passSingin);
+
     }
 
     public void changeToLogin(View view){
@@ -34,57 +57,77 @@ public class SignIn extends AppCompatActivity {
         startActivity(nIntent);
     }
 
-    public void insertValues(View v){
-        TextView nameTextView = findViewById(R.id.nameSingin);
-        TextView lastNameTextView = findViewById(R.id.lastNameSingin);
-        TextView emailTextView = findViewById(R.id.emailSingin);
-        TextView passTextView = findViewById(R.id.passSingin);
+    public void signup(View view){
 
-        String nameString = nameTextView.getText().toString();
-        String lastNameString = lastNameTextView.getText().toString();
-        String emailString = emailTextView.getText().toString();
-        String passString = passTextView.getText().toString();
+        //Pasar lo que hay en el textview a string
+        nameString = nameEdit.getText().toString();
+        lastNameString = lastNameEdit.getText().toString();
+        emailString = emailEdit.getText().toString();
+        passString = passEdit.getText().toString();
 
+        //Si todos los campos estan rellenos, entonces
+        if(!nameString.isEmpty() && !lastNameString.isEmpty() && !emailString.isEmpty() && !passString.isEmpty()){
+            //Crear instancia del FirebaseAuth
+            FirebaseAuth auth = FirebaseAuth.getInstance();
+            //Crear usuario con los datos introducidos
+            auth.createUserWithEmailAndPassword(emailString, passString).addOnCompleteListener(SignIn.this,
+                    new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                //Toast para indicar que el usuario ha sido registrado
+                                Toast.makeText(SignIn.this, "Usuario Registrado", Toast.LENGTH_LONG).show();
+                                FirebaseUser user = auth.getCurrentUser();
 
-        DatabaseAux aux = new DatabaseAux(SignIn.this);
-        SQLiteDatabase db = aux.getWritableDatabase();
+                                //Añadir los datos de los usuarios
+                                ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(nameString, lastNameString);
 
-        if(db != null && !nameString.isEmpty() && !lastNameString.isEmpty() && !emailString.isEmpty() && !passString.isEmpty()) {
-            ContentValues values = new ContentValues();
+                                //Referencia de usuarios
+                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                DatabaseReference ref = database.getReference("Users");
+                               DatabaseReference usersRef = ref.child(user.getUid());
+                               usersRef.setValue(writeUserDetails).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                   @Override
+                                   public void onComplete(@NonNull Task<Void> task) {
+                                       if(task.isSuccessful()){
+                                           //Enviar email de verificacion
+                                           user.sendEmailVerification();
 
-            values.put("name", nameString);
-            values.put("lastName", lastNameString);
-            values.put("email", emailString);
-            values.put("password", passString);
+                                           //Una vez registrado el usuario, accede a la pantalla de home
+                                           Intent intent =  new Intent(SignIn.this, Home.class);
+                                           intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                                   Intent.FLAG_ACTIVITY_NEW_TASK);
+                                           startActivity(intent);
 
+                                           finish();
+                                       }else{
+                                           Toast.makeText(SignIn.this, "El registro ha fallado", Toast.LENGTH_LONG).show();
+                                       }
+                                   }
+                               });
 
-            long res = db.insert( "users", null, values);
-
-            if (res >= 0){
-                Toast.makeText(this, "Insertado correctamente", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(SignIn.this, Login.class));
-            }else{
-                Toast.makeText(this, "Fallo al insertar", Toast.LENGTH_LONG).show();
-            }
-            db.close();
+                            }else{
+                                //Excepciones del metodo de registro de FirebaseAuth
+                                try{
+                                    throw task.getException();
+                                }catch(FirebaseAuthWeakPasswordException e){
+                                    passEdit.setError("Tu contraseña es muy debil, porfavor usa una mezcla de numeros y letras mayusculas y minusculas");
+                                    passEdit.requestFocus();
+                                }catch(FirebaseAuthInvalidCredentialsException e){
+                                    emailEdit.setError("Tu email no es valido o ya está en uso");
+                                    emailEdit.requestFocus();
+                                }catch(FirebaseAuthUserCollisionException e){
+                                    passEdit.setError("El usuario ya está registrado con estas credenciales");
+                                    passEdit.requestFocus();
+                                }catch(Exception e){
+                                    Log.e(TAG, e.getMessage());
+                                    Toast.makeText(SignIn.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        }
+                    });
+        }else{
+            Toast.makeText(SignIn.this, "Porfavor, rellene los campos", Toast.LENGTH_LONG).show();
         }
-        FirebaseFirestore firestoreDb = FirebaseFirestore.getInstance();
-        Map<String, Object> users = new HashMap<>();
-        users.put("name", nameString);
-        users.put("lastName", lastNameString);
-        users.put("email", emailString);
-        users.put("password", passString);
-
-        firestoreDb.collection("Giwi").document(emailString).set(users).addOnSuccessListener(new OnSuccessListener<Void>(){
-            @Override
-            public void onSuccess(Void unused) {
-                Log.d("DEBUG", "TODO OK");
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.d("ERROR", e.getMessage());
-            }
-        });
     }
 }

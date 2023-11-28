@@ -201,6 +201,13 @@
         app:layout_constraintGuide_percent="0.0" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7931873" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_line_top_imagen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -306,12 +313,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.0" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline44"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.7931873" />
 
 <<<<<<< HEAD
     <Button
