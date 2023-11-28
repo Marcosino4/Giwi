@@ -136,7 +136,7 @@
         app:layout_constraintStart_toStartOf="@+id/left_audios"
         app:layout_constraintTop_toTopOf="@+id/top_museo_del_prado" />
 
-    <Button
+    <ImageView
         android:id="@+id/back"
         android:layout_width="5.41dp"
         android:layout_height="18.5dp"

@@ -6,9 +6,12 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class Venecia_View extends AppCompatActivity {
+    ImageView back;
+
     Button play_pause_psm;
     Button play_pause_pdr;
     MediaPlayer mp_psm;
@@ -35,6 +38,15 @@ public class Venecia_View extends AppCompatActivity {
         boton_guardar_venecia = (Button)findViewById(R.id.boton_guardar_venecia);
         drawableResource= R.drawable.i_botonguardado;
         notDrawableResource= R.drawable.i_botonsinguardar;
+
+        back = (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                onBackPressed();
+
+            }
+        });
         guardar_venecia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

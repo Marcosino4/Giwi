@@ -8,9 +8,12 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class Viena_View extends AppCompatActivity {
+
+    ImageView back;
     LinearLayout guardar_viena;
     boolean estado_boton_vv;
     Button boton_guardar_viena;
@@ -30,6 +33,15 @@ public class Viena_View extends AppCompatActivity {
         boton_guardar_viena = (Button)findViewById(R.id.boton_guardar_viena);
         drawableResource= R.drawable.i_botonguardado;
         notDrawableResource= R.drawable.i_botonsinguardar;
+
+        back = (ImageView)findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                onBackPressed();
+
+            }
+        });
 
         guardar_viena.setOnClickListener(new View.OnClickListener() {
             @Override

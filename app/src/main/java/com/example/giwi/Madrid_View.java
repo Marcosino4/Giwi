@@ -6,9 +6,12 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class Madrid_View extends AppCompatActivity {
+    ImageView back;
+
     Button play_pause_pr;
     Button play_pause_pm;
     Button play_pause_mdp;
@@ -38,6 +41,15 @@ public class Madrid_View extends AppCompatActivity {
         boton_guardar_madrid = (Button)findViewById(R.id.boton_guardar_madrid);
         drawableResource= R.drawable.i_botonguardado;
         notDrawableResource= R.drawable.i_botonsinguardar;
+
+        back = (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                onBackPressed();
+
+            }
+        });
 
         guardar_madrid.setOnClickListener(new View.OnClickListener() {
             @Override

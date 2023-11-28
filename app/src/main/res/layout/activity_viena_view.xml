@@ -166,7 +166,7 @@
         app:layout_constraintStart_toStartOf="@+id/left_audios"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <Button
+    <ImageView
         android:id="@+id/back"
         android:layout_width="5.41dp"
         android:layout_height="18.5dp"
