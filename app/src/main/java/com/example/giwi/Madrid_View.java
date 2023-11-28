@@ -29,19 +29,26 @@ public class Madrid_View extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_madrid_view);
+        //Boton para que suene los audios
         play_pause_pr = (Button) findViewById(R.id.play_puente_carlos);
         play_pause_pm = (Button) findViewById(R.id.play_castillo_de_praga);
         play_pause_mdp = (Button) findViewById(R.id.play_museo_del_prado);
         mp_pr = MediaPlayer.create(this, R.raw.palacioreal);
         mp_pm = MediaPlayer.create(this, R.raw.plazamayor);
         mp_mdp = MediaPlayer.create(this, R.raw.elprado);
+        ////Boton para que suene los audios
 
+
+        //Boton de guardado en los views
         estado_boton_vv = true;
         guardar_madrid = (LinearLayout) findViewById(R.id.guardar_madrid);
         boton_guardar_madrid = (Button) findViewById(R.id.boton_guardar_madrid);
-        drawableResource = R.drawable.botonguardado;
-        notDrawableResource = R.drawable.botonsinguardar;
+        drawableResource = R.drawable.i_botonguardado;
+        notDrawableResource = R.drawable.i_botonsinguardar;
+        ////Boton de guardado en los views
 
+
+        //Boton hacia atras
         back = (ImageView) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,11 +57,14 @@ public class Madrid_View extends AppCompatActivity {
 
             }
         });
+        ////Boton hacia atras
 
+
+        //Boton de guardado en los views
         guardar_madrid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(estado_boton_vv == true){
+                if(estado_boton_vv){
                     boton_guardar_madrid.setBackgroundResource(drawableResource);
                     estado_boton_vv = false;
                 }else{
@@ -66,7 +76,7 @@ public class Madrid_View extends AppCompatActivity {
         boton_guardar_madrid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(estado_boton_vv == true){
+                if(estado_boton_vv){
                     boton_guardar_madrid.setBackgroundResource(drawableResource);
                     estado_boton_vv = false;
                 }else{
@@ -75,19 +85,22 @@ public class Madrid_View extends AppCompatActivity {
                 }
             }
         });
+        /////Boton de guardado en los views
 
+
+        //Boton para que suene los audios
         play_pause_pr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(mp_pr.isPlaying()){
                     mp_pr.pause();
-                    play_pause_pr.setBackgroundResource(R.drawable.play);
+                    play_pause_pr.setBackgroundResource(R.drawable.i_play);
 
                 }else{
                     mp_pr.start();
-                    play_pause_pm.setBackgroundResource(R.drawable.play);
-                    play_pause_mdp.setBackgroundResource(R.drawable.play);
-                    play_pause_pr.setBackgroundResource(R.drawable.pause);
+                    play_pause_pm.setBackgroundResource(R.drawable.i_play);
+                    play_pause_mdp.setBackgroundResource(R.drawable.i_play);
+                    play_pause_pr.setBackgroundResource(R.drawable.i_pause);
                 }
             }
         });
@@ -96,13 +109,13 @@ public class Madrid_View extends AppCompatActivity {
             public void onClick(View view) {
                 if(mp_pm.isPlaying()){
                     mp_pm.pause();
-                    play_pause_pm.setBackgroundResource(R.drawable.play);
+                    play_pause_pm.setBackgroundResource(R.drawable.i_play);
 
                 }else{
                     mp_pm.start();
-                    play_pause_pr.setBackgroundResource(R.drawable.play);
-                    play_pause_mdp.setBackgroundResource(R.drawable.play);
-                    play_pause_pm.setBackgroundResource(R.drawable.pause);
+                    play_pause_pr.setBackgroundResource(R.drawable.i_play);
+                    play_pause_mdp.setBackgroundResource(R.drawable.i_play);
+                    play_pause_pm.setBackgroundResource(R.drawable.i_pause);
                 }
             }
         });
@@ -112,15 +125,16 @@ public class Madrid_View extends AppCompatActivity {
                 if(mp_mdp.isPlaying()){
                     mp_mdp.pause();
 
-                    play_pause_mdp.setBackgroundResource(R.drawable.play);
+                    play_pause_mdp.setBackgroundResource(R.drawable.i_play);
 
                 }else{
                     mp_mdp.start();
-                    play_pause_pm.setBackgroundResource(R.drawable.play);
-                    play_pause_pr.setBackgroundResource(R.drawable.play);
-                    play_pause_mdp.setBackgroundResource(R.drawable.pause);
+                    play_pause_pm.setBackgroundResource(R.drawable.i_play);
+                    play_pause_pr.setBackgroundResource(R.drawable.i_play);
+                    play_pause_mdp.setBackgroundResource(R.drawable.i_pause);
                 }
             }
         });
+        ////Boton para que suene los audios
     }
 }

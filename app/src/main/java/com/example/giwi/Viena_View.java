@@ -25,14 +25,14 @@ public class Viena_View extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viena_view);
-        play_pause_pds= (Button) findViewById(R.id.play_palacio_de_schonbrunn);
+        play_pause_pds= findViewById(R.id.play_palacio_de_schonbrunn);
         mp_pds= MediaPlayer.create(this, R.raw.prueba1);
 
         estado_boton_vv=true;
         guardar_viena= (LinearLayout)findViewById(R.id.guardar_viena);
         boton_guardar_viena = (Button)findViewById(R.id.boton_guardar_viena);
-        drawableResource= R.drawable.botonguardado;
-        notDrawableResource= R.drawable.botonsinguardar;
+        drawableResource= R.drawable.i_botonguardado;
+        notDrawableResource= R.drawable.i_botonsinguardar;
 
         back = (ImageView) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -72,11 +72,14 @@ public class Viena_View extends AppCompatActivity {
             public void onClick(View v) {
                 if (mp_pds.isPlaying()) {
                     mp_pds.pause();
-                    play_pause_pds.setBackgroundResource(play);
+
+                    play_pause_pds.setBackgroundResource(R.drawable.i_play);
 
                 } else {
                     mp_pds.start();
-                    play_pause_pds.setBackgroundResource(pause);
+                    play_pause_pds.setBackgroundResource(R.drawable.i_pause);
+                    play_pause_pds.setBackgroundResource(i_play);
+;
                 }
             }
         });

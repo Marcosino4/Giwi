@@ -26,17 +26,26 @@ public class Praga_View extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_praga_view);
+
+        //Boton para que suene los audios
+
         play_pause_pc=(Button)findViewById(R.id.play_puente_carlos);
         play_pause_cdp=(Button)findViewById(R.id.play_castillo_de_praga);
         mp_pc=MediaPlayer.create(this,R.raw.puentecarlos);
         mp_cdp=MediaPlayer.create(this,R.raw.castillodepraga);
+        ////Boton para que suene los audios
 
+
+        //Boton de guardado en los views
         estado_boton_vv=true;
         guardar_praga= (LinearLayout)findViewById(R.id.guardar_praga);
         boton_guardar_praga = (Button)findViewById(R.id.boton_guardar_praga);
-        drawableResource= R.drawable.botonguardado;
-        notDrawableResource= R.drawable.botonsinguardar;
+        drawableResource= R.drawable.i_botonguardado;
+        notDrawableResource= R.drawable.i_botonsinguardar;
+        ////Boton de guardado en los views
 
+
+        ////Boton hacia atras
         back = (ImageView) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,10 +54,14 @@ public class Praga_View extends AppCompatActivity {
 
             }
         });
+        ////Boton hacia atras
+
+
+        ////Boton de guardado en los views
         guardar_praga.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(estado_boton_vv == true){
+                if(estado_boton_vv){
                     boton_guardar_praga.setBackgroundResource(drawableResource);
                     estado_boton_vv = false;
                 }else{
@@ -60,7 +73,7 @@ public class Praga_View extends AppCompatActivity {
         boton_guardar_praga.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(estado_boton_vv == true){
+                if(estado_boton_vv){
                     boton_guardar_praga.setBackgroundResource(drawableResource);
                     estado_boton_vv = false;
                 }else{
@@ -69,16 +82,20 @@ public class Praga_View extends AppCompatActivity {
                 }
             }
         });
+        ////Boton de guardado en los views
+
+
+        //Boton para que suene los audios
         play_pause_pc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(mp_pc.isPlaying()){
                     mp_pc.pause();
-                    play_pause_pc.setBackgroundResource(R.drawable.play);
+                    play_pause_pc.setBackgroundResource(R.drawable.i_play);
                 }else{
                     mp_pc.start();
-                    play_pause_cdp.setBackgroundResource(R.drawable.play);
-                    play_pause_pc.setBackgroundResource(R.drawable.pause);
+                    play_pause_cdp.setBackgroundResource(R.drawable.i_play);
+                    play_pause_pc.setBackgroundResource(R.drawable.i_pause);
                 }
             }
         });
@@ -87,13 +104,14 @@ public class Praga_View extends AppCompatActivity {
             public void onClick(View v) {
                 if(mp_cdp.isPlaying()){
                     mp_cdp.pause();
-                    play_pause_cdp.setBackgroundResource(R.drawable.play);
+                    play_pause_cdp.setBackgroundResource(R.drawable.i_play);
                 }else{
                     mp_cdp.start();
-                    play_pause_pc.setBackgroundResource(R.drawable.play);
-                    play_pause_cdp.setBackgroundResource(R.drawable.pause);
+                    play_pause_pc.setBackgroundResource(R.drawable.i_play);
+                    play_pause_cdp.setBackgroundResource(R.drawable.i_pause);
                 }
             }
         });
+        ////Boton para que suene los audios
     }
 }

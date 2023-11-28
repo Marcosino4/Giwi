@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guide_line_left_imagen"
         app:layout_constraintStart_toStartOf="@+id/guide_line_right_imagen"
         app:layout_constraintTop_toTopOf="@+id/guide_line_top_imagen"
-        app:srcCompat="@drawable/madrid" />
+        app:srcCompat="@drawable/i_madrid" />
 
     <View
         android:id="@+id/palacio_real_view"
@@ -76,7 +76,7 @@
         app:layout_constraintEnd_toStartOf="@+id/right_audios"
         app:layout_constraintStart_toStartOf="@+id/left_audios"
         app:layout_constraintTop_toTopOf="@+id/top_palacio_real"
-        app:srcCompat="@drawable/sonido" />
+        app:srcCompat="@drawable/i_sonido" />
 
     <ImageView
         android:id="@+id/sonido_plaza_mayor"
@@ -87,7 +87,7 @@
         app:layout_constraintEnd_toStartOf="@+id/right_audios"
         app:layout_constraintStart_toStartOf="@+id/left_audios"
         app:layout_constraintTop_toTopOf="@+id/top_plaza_mayor"
-        app:srcCompat="@drawable/sonido" />
+        app:srcCompat="@drawable/i_sonido" />
 
     <ImageView
         android:id="@+id/sonido_museo_del_prado"
@@ -99,7 +99,7 @@
         app:layout_constraintEnd_toStartOf="@+id/right_audios"
         app:layout_constraintStart_toStartOf="@+id/left_audios"
         app:layout_constraintTop_toTopOf="@+id/top_museo_del_prado"
-        app:srcCompat="@drawable/sonido" />
+        app:srcCompat="@drawable/i_sonido" />
 
     <Button
         android:id="@+id/play_puente_carlos"
@@ -107,7 +107,7 @@
         android:layout_height="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="230dp"
-        android:background="@drawable/play"
+        android:background="@drawable/i_play"
         app:layout_constraintBottom_toTopOf="@+id/bot_palacio_real"
         app:layout_constraintEnd_toStartOf="@+id/right_audios"
         app:layout_constraintStart_toStartOf="@+id/left_audios"
@@ -118,7 +118,7 @@
         android:layout_width="17dp"
         android:layout_height="20dp"
         android:layout_marginEnd="230dp"
-        android:background="@drawable/play"
+        android:background="@drawable/i_play"
         app:layout_constraintBottom_toTopOf="@+id/bot_plaza_mayor"
         app:layout_constraintEnd_toStartOf="@+id/right_audios"
         app:layout_constraintStart_toStartOf="@+id/left_audios"
@@ -130,22 +130,11 @@
         android:layout_width="17dp"
         android:layout_height="20dp"
         android:layout_marginEnd="230dp"
-        android:background="@drawable/play"
+        android:background="@drawable/i_play"
         app:layout_constraintBottom_toTopOf="@+id/bot_museo_del_prado"
         app:layout_constraintEnd_toStartOf="@+id/right_audios"
         app:layout_constraintStart_toStartOf="@+id/left_audios"
         app:layout_constraintTop_toTopOf="@+id/top_museo_del_prado" />
-
-    <Button
-        android:id="@+id/menu"
-        android:layout_width="22dp"
-        android:layout_height="17.6dp"
-        android:layout_marginStart="290dp"
-        android:background="@drawable/menu"
-        app:layout_constraintBottom_toTopOf="@+id/guide_line_top_imagen"
-        app:layout_constraintEnd_toStartOf="@+id/right_audios"
-        app:layout_constraintStart_toStartOf="@+id/left_audios"
-        app:layout_constraintTop_toTopOf="@+id/guide_line_top" />
 
     <TextView
         android:id="@+id/palacio_real_text"
@@ -210,7 +199,7 @@
             android:layout_height="25dp"
             android:layout_marginTop="19dp"
             android:layout_marginLeft="22dp"
-            android:background="@drawable/botonsinguardar" />
+            android:background="@drawable/i_botonsinguardar" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
@@ -296,7 +285,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.85" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_line_top"
         android:layout_width="wrap_content"
