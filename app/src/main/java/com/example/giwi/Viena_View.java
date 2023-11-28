@@ -14,7 +14,7 @@ public class Viena_View extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viena_view);
-        play_pause_pds= (Button) findViewById(R.id.play_palacio_de_schonbrunn);
+        play_pause_pds= findViewById(R.id.play_palacio_de_schonbrunn);
         mp_pds= MediaPlayer.create(this, R.raw.prueba1);
 
         play_pause_pds.setOnClickListener(new View.OnClickListener() {

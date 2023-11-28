@@ -16,8 +16,8 @@ public class Venecia_View extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_venecia_view);
-        play_pause_psm= (Button) findViewById(R.id.play_piazza_san_marcos);
-        play_pause_pdr= (Button) findViewById(R.id.play_puente_de_rialto);
+        play_pause_psm= findViewById(R.id.play_piazza_san_marcos);
+        play_pause_pdr= findViewById(R.id.play_puente_de_rialto);
         mp_psm = MediaPlayer.create(this, R.raw.prueba1);
         mp_pdr = MediaPlayer.create(this, R.raw.prueba1);
         play_pause_psm.setOnClickListener(new View.OnClickListener() {
