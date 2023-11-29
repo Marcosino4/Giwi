@@ -43,6 +43,8 @@ public class Venecia_View extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                mp_psm.pause();
+                mp_pdr.pause();
                 onBackPressed();
 
             }

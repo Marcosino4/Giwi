@@ -41,6 +41,8 @@ public class Praga_View extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                mp_pc.pause();
+                mp_cdp.pause();
                 onBackPressed();
 
             }

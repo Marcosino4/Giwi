@@ -38,6 +38,7 @@ public class Viena_View extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                mp_pds.pause();
                 onBackPressed();
 
             }

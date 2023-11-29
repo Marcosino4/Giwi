@@ -46,8 +46,10 @@ public class Madrid_View extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                mp_mdp.pause();
+                mp_pr.pause();
+                mp_pm.pause();
                 onBackPressed();
-
             }
         });
 
