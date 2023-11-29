@@ -52,11 +52,14 @@ public class SignIn extends AppCompatActivity {
 
     }
 
+    //Cambiar al Login
     public void changeToLogin(View view){
         Intent nIntent = new Intent(SignIn.this, Login.class);
         startActivity(nIntent);
     }
 
+
+    //Función de Registro
     public void signup(View view){
 
         //Pasar lo que hay en el textview a string
@@ -79,7 +82,7 @@ public class SignIn extends AppCompatActivity {
                                 Toast.makeText(SignIn.this, "Usuario Registrado", Toast.LENGTH_LONG).show();
                                 FirebaseUser user = auth.getCurrentUser();
 
-                                //Añadir los datos de los usuarios
+                                //Añadir los datos de los usuarios según los campos
                                 ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(nameString, lastNameString);
 
                                 //Referencia de usuarios
@@ -126,6 +129,7 @@ public class SignIn extends AppCompatActivity {
                             }
                         }
                     });
+        //Si no están todos los campos rellenos, entonces
         }else{
             Toast.makeText(SignIn.this, "Porfavor, rellene los campos", Toast.LENGTH_LONG).show();
         }

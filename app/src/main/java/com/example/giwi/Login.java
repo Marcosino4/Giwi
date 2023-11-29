@@ -25,10 +25,13 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
 
+    // Elementos de la interfaz
     private TextView emailTextView, passTextView;
 
     private String emailString, passString;
     private FirebaseAuth authProfile;
+
+    // Etiqueta para mensajes de registro (logging) (Me lo dijo un indio)
     private static final String TAG = "Login";
 
 
@@ -40,12 +43,17 @@ public class Login extends AppCompatActivity {
         emailTextView = findViewById(R.id.emailLogin);
         passTextView = findViewById(R.id.passLogin);
 
+        // Obtener la instancia de FirebaseAuth.
         authProfile = FirebaseAuth.getInstance();
     }
+
+    //Cambiar al inicio de sesión
     public void changeToSignin(View view){
         Intent nIntent = new Intent(Login.this, SignIn.class);
         startActivity(nIntent);
     }
+
+    //Funcion que realiza el login
     @SuppressLint("Range")
     public void logIn(View view){
         //Datos del textview a texto
@@ -55,12 +63,14 @@ public class Login extends AppCompatActivity {
         //Si todos los campos están rellenos, entonces
         if(!emailString.isEmpty() && !passString.isEmpty()){
 
+            //Logear un perfil según su correo y contraseña
             authProfile.signInWithEmailAndPassword(emailString, passString).addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
+                    //Si se ha logrado realizar de forma satisfactoria
                     if(task.isSuccessful()){
                         Toast.makeText(Login.this, "Iniciando sesión", Toast.LENGTH_LONG).show();
-
+                        //Cuando inicia sesion hace el intent para cambiar al home
                         Intent intent = new Intent(Login.this, MainActivity.class);
 
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK |
@@ -69,6 +79,8 @@ public class Login extends AppCompatActivity {
 
                         finish();
 
+
+                        //Si no, excepciones del inicio de sesión
                     }else{
                         try{
                             throw task.getException();
@@ -88,6 +100,7 @@ public class Login extends AppCompatActivity {
             });
 
 
+        //Si no estan todos los campos completos
         }else{
             Toast.makeText(Login.this, "porfavor, complete todos los campos", Toast.LENGTH_LONG).show();
         }

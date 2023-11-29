@@ -16,7 +16,7 @@
         android:layout_marginTop="25dp"
         android:src="@drawable/frame_199"/>
 
-    //Introducir nombre de usuario
+
 
     <TextView
         android:id="@+id/user_name"
@@ -27,7 +27,7 @@
         android:textColor="@color/white"
         android:textStyle="bold" />
 
-    //Introducir correo de usuario
+
 
     <TextView
         android:id="@+id/user_email"
