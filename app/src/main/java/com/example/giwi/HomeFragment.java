@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 public class HomeFragment extends Fragment {
+    // Declaración de variables para los botones y estados de los botones
     Button guardar_madrid;
     Button guardar_praga;
     Button guardar_viena;
@@ -21,23 +22,29 @@ public class HomeFragment extends Fragment {
     boolean estado_boton_p;
     boolean estado_boton_vi;
     boolean estado_boton_ve;
+
+    // Declaración de contenedores LinearLayout
     LinearLayout ly_m;
     LinearLayout ly_p;
     LinearLayout ly_vi;
     LinearLayout ly_ve;
 
+    // Recursos para los estados de los botones
     int drawableResource;
     int notDrawableResource;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Inflar el diseño de este fragmento
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
+        // Inicializar los estados de los botones
         estado_boton_m = true;
         estado_boton_p = true;
         estado_boton_vi = true;
         estado_boton_ve = true;
+
+        // Referenciar y asignar recursos a los botones y contenedores
         guardar_madrid = rootView.findViewById(R.id.guardar_madrid);
         guardar_praga = rootView.findViewById(R.id.guardar_praga);
         guardar_viena = rootView.findViewById(R.id.guardar_viena);
@@ -48,6 +55,8 @@ public class HomeFragment extends Fragment {
         ly_p = rootView.findViewById(R.id.praga_contenedor);
         ly_vi = rootView.findViewById(R.id.viena_contenedor);
         ly_ve = rootView.findViewById(R.id.venecia_contenedor);
+
+        // Configurar clics en los contenedores para abrir vistas detalladas
         ly_m.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -127,6 +136,6 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
-        return  rootView;
+        return  rootView;   // Devolver la vista inflada
     }
 }

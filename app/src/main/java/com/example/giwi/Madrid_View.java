@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class Madrid_View extends AppCompatActivity {
+    // Declaración de variables para los elementos de la interfaz y los reproductores de audio
     ImageView back;
 
     Button play_pause_pr;
@@ -28,7 +29,9 @@ public class Madrid_View extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_madrid_view);
+        setContentView(R.layout.activity_madrid_view);  // Establecer el diseño de la actividad
+
+        // Inicialización de botones y reproductores de audio
         play_pause_pr = (Button) findViewById(R.id.play_puente_carlos);
         play_pause_pm = (Button) findViewById(R.id.play_castillo_de_praga);
         play_pause_mdp = (Button) findViewById(R.id.play_museo_del_prado);
@@ -36,6 +39,7 @@ public class Madrid_View extends AppCompatActivity {
         mp_pm = MediaPlayer.create(this,R.raw.plazamayor);
         mp_mdp = MediaPlayer.create(this,R.raw.elprado);
 
+        // Inicialización de variables para la opción de guardar
         estado_boton_vv=true;
         guardar_madrid= (LinearLayout)findViewById(R.id.guardar_madrid);
         boton_guardar_madrid = (Button)findViewById(R.id.boton_guardar_madrid);
@@ -44,6 +48,8 @@ public class Madrid_View extends AppCompatActivity {
 
         back = (ImageView) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
+
+            // Pausar la reproducción y volver atrás al hacer clic en el botón de retroceso
             @Override
             public void onClick(View v){
                 mp_mdp.pause();
@@ -53,6 +59,7 @@ public class Madrid_View extends AppCompatActivity {
             }
         });
 
+        // Cambiar el estado y la apariencia del botón de guardar al hacer clic
         guardar_madrid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +72,8 @@ public class Madrid_View extends AppCompatActivity {
                 }
             }
         });
+
+        // Repetir la lógica de clic para mantener consistencia
         boton_guardar_madrid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,6 +87,7 @@ public class Madrid_View extends AppCompatActivity {
             }
         });
 
+        // Controlar la reproducción/pausa y la apariencia del botón para el Palacio Real
         play_pause_pr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,6 +103,8 @@ public class Madrid_View extends AppCompatActivity {
                 }
             }
         });
+
+        // Controlar la reproducción/pausa y la apariencia del botón para la Plaza Mayor
         play_pause_pm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,6 +120,8 @@ public class Madrid_View extends AppCompatActivity {
                 }
             }
         });
+
+        // Controlar la reproducción/pausa y la apariencia del botón para el Museo del Prado
         play_pause_mdp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

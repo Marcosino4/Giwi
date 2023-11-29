@@ -45,7 +45,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             setSupportActionBar(toolbar);
 
             drawerLayout = findViewById(R.id.drawer_layout);
-            //Seleccionar TextViews del NavigationView
+
+            // Obtener referencias a las TextViews en el NavigationView
             NavigationView navigationView =(NavigationView) findViewById(R.id.nav_view);
             View headerView = navigationView.getHeaderView(0);
 
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             String userID = firebaseUser.getUid();
             DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Users");
 
+            // Leer datos del usuario desde la base de datos
             referenceProfile.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -71,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                     String nombreCompleto = retrievedName + " " + retrievedLastname;
 
+                    // Mostrar datos de usuario en el NavigationView
                     userNameMenu.setText(nombreCompleto);
                     userEmailMenu.setText(retrievedEmail);
                 }
@@ -81,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             });
 
-
+            // Configuración del botón de hamburguesa en la barra de herramientas
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav,
                     R.string.close_nav);
             drawerLayout.addDrawerListener(toggle);
@@ -93,6 +96,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
 
         }
+
+        // Manejar las selecciones de elementos de menú en el cajón de navegación
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             //Opcion home del menu desplegable
@@ -109,10 +114,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
             }
+            // Cerrar el cajón de navegación después de la selección
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;
         }
-        @Override
+
+    // Manejar la pulsación del botón "Atrás"
+    @Override
         public void onBackPressed() {
             if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
                 drawerLayout.closeDrawer(GravityCompat.START);
