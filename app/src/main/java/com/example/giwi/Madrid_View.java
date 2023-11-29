@@ -93,6 +93,8 @@ public class Madrid_View extends AppCompatActivity {
             public void onClick(View view) {
                 if(mp_pr.isPlaying()){
                     mp_pr.pause();
+                    mp_pm.pause();
+                    mp_mdp.pause();
                     play_pause_pr.setBackgroundResource(R.drawable.i_play);
 
                 }else{
@@ -110,6 +112,8 @@ public class Madrid_View extends AppCompatActivity {
             public void onClick(View view) {
                 if(mp_pm.isPlaying()){
                     mp_pm.pause();
+                    mp_pr.pause();
+                    mp_mdp.pause();
                     play_pause_pm.setBackgroundResource(R.drawable.i_play);
 
                 }else{
@@ -127,7 +131,8 @@ public class Madrid_View extends AppCompatActivity {
             public void onClick(View view) {
                 if(mp_mdp.isPlaying()){
                     mp_mdp.pause();
-
+                    mp_pr.pause();
+                    mp_pm.pause();
                     play_pause_mdp.setBackgroundResource(R.drawable.i_play);
 
                 }else{

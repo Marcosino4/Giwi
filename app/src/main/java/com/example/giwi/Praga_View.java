@@ -86,6 +86,8 @@ public class Praga_View extends AppCompatActivity {
             public void onClick(View v) {
                 if(mp_pc.isPlaying()){
                     mp_pc.pause();
+                    mp_cdp.pause();
+
                     play_pause_pc.setBackgroundResource(R.drawable.i_play);
                 }else{
                     mp_pc.start();
@@ -101,6 +103,8 @@ public class Praga_View extends AppCompatActivity {
             public void onClick(View v) {
                 if(mp_cdp.isPlaying()){
                     mp_cdp.pause();
+                    mp_pc.pause();
+
                     play_pause_cdp.setBackgroundResource(R.drawable.i_play);
                 }else{
                     mp_cdp.start();

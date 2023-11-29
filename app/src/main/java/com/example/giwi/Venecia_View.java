@@ -78,6 +78,8 @@ public class Venecia_View extends AppCompatActivity {
             public void onClick(View view) {
                 if(mp_psm.isPlaying()){
                     mp_psm.pause();
+                    mp_pdr.pause();
+
                     play_pause_psm.setBackgroundResource(R.drawable.i_play);
 
                 }else{
@@ -92,6 +94,8 @@ public class Venecia_View extends AppCompatActivity {
             public void onClick(View view) {
                 if(mp_pdr.isPlaying()){
                     mp_pdr.pause();
+                    mp_psm.pause();
+
                     play_pause_pdr.setBackgroundResource(R.drawable.i_play);
 
                 }else{
