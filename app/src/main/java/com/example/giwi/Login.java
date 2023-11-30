@@ -1,9 +1,11 @@
 package com.example.giwi;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -22,11 +24,13 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseUser;
 
+import org.checkerframework.checker.units.qual.A;
+
 
 public class Login extends AppCompatActivity {
 
     // Elementos de la interfaz
-    private TextView emailTextView, passTextView;
+    private TextView emailTextView, passTextView, forgotAccount;
 
     private String emailString, passString;
     private FirebaseAuth authProfile;
@@ -45,30 +49,54 @@ public class Login extends AppCompatActivity {
 
         // Obtener la instancia de FirebaseAuth.
         authProfile = FirebaseAuth.getInstance();
+
+        forgotAccount = findViewById(R.id.forgotAccount);
+        forgotAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder alertdialog = new AlertDialog.Builder(Login.this, R.style.CustomAlert);
+                alertdialog.setTitle("Introduce tu email");
+
+                alertdialog.setView(R.layout.recover_account);
+
+                alertdialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(Login.this, "Email de recuperacion enviado", Toast.LENGTH_LONG).show();
+                    }
+                });
+                alertdialog.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                alertdialog.show();
+            }
+        });
     }
 
     //Cambiar al inicio de sesión
-    public void changeToSignin(View view){
+    public void changeToSignin(View view) {
         Intent nIntent = new Intent(Login.this, SignIn.class);
         startActivity(nIntent);
     }
 
     //Funcion que realiza el login
     @SuppressLint("Range")
-    public void logIn(View view){
+    public void logIn(View view) {
         //Datos del textview a texto
         emailString = emailTextView.getText().toString();
         passString = passTextView.getText().toString();
 
         //Si todos los campos están rellenos, entonces
-        if(!emailString.isEmpty() && !passString.isEmpty()){
+        if (!emailString.isEmpty() && !passString.isEmpty()) {
 
             //Logear un perfil según su correo y contraseña
             authProfile.signInWithEmailAndPassword(emailString, passString).addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     //Si se ha logrado realizar de forma satisfactoria
-                    if(task.isSuccessful()){
+                    if (task.isSuccessful()) {
                         Toast.makeText(Login.this, "Iniciando sesión", Toast.LENGTH_LONG).show();
                         //Cuando inicia sesion hace el intent para cambiar al home
                         Intent intent = new Intent(Login.this, MainActivity.class);
@@ -81,16 +109,16 @@ public class Login extends AppCompatActivity {
 
 
                         //Si no, excepciones del inicio de sesión
-                    }else{
-                        try{
+                    } else {
+                        try {
                             throw task.getException();
-                        }catch(FirebaseAuthInvalidUserException e){
+                        } catch (FirebaseAuthInvalidUserException e) {
                             emailTextView.setError("Su usuario no existe");
                             emailTextView.requestFocus();
-                        }catch(FirebaseAuthInvalidCredentialsException e){
+                        } catch (FirebaseAuthInvalidCredentialsException e) {
                             emailTextView.setError("Credenciales invalidas, porfavor intentelo de nuevo");
                             emailTextView.requestFocus();
-                        }catch (Exception e){
+                        } catch (Exception e) {
                             Log.e(TAG, e.getMessage());
                             Toast.makeText(Login.this, e.getMessage(), Toast.LENGTH_LONG).show();
                         }
@@ -100,15 +128,14 @@ public class Login extends AppCompatActivity {
             });
 
 
-        //Si no estan todos los campos completos
-        }else{
-            Toast.makeText(Login.this, "porfavor, complete todos los campos", Toast.LENGTH_LONG).show();
+            //Si no estan todos los campos completos
+        } else {
+            Toast.makeText(Login.this, "Porfavor, complete todos los campos", Toast.LENGTH_LONG).show();
         }
 
 
 
     }
-
 }
 
 
